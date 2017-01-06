@@ -186,7 +186,7 @@
                  
                   
                   <li class="sub-menu">
-                      <a href="login.php" class="">
+                      <a href="deconnexion.php" class="">
                           <i class="icon_documents_alt"></i>
                           <span>Page de login</span>
                          
