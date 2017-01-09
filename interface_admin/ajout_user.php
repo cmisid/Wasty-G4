@@ -11,7 +11,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Form Component | Creative - Bootstrap 3 Responsive Admin Template</title>
+    <title>Ajout utilisateur</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,168 +41,9 @@
 
   <!-- container section start -->
   <section id="container" class="">
-      <!--header start-->
-      <header class="header dark-bg">
-            <div class="toggle-nav">
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-            </div>
-
-            <!--logo start-->
-           <a href="index.php" class="logo">Administrateur</a>
-            <!--logo end-->
-
-            <div class="nav search-row" id="top_menu">
-                <!--  search form start -->
-                <ul class="nav top-menu">                    
-                    <li>
-                        <form class="navbar-form">
-                            <input class="form-control" placeholder="Search" type="text">
-                        </form>
-                    </li>                    
-                </ul>
-                <!--  search form end -->                
-            </div>
-
-            <div class="top-nav notification-row">                
-                <!-- notificatoin dropdown start-->
-                <ul class="nav pull-right top-menu">
-                    
-                   
-                    <!-- inbox notificatoin start-->
-                    <li id="mail_notificatoin_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-envelope-l"></i>
-                            <span class="badge bg-important">5</span>
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-blue"></div>
-                            <li>
-                                <p class="blue">You have 5 new messages</p>
-                            </li>
-                            
-                          
-                            <li>
-                                <a href="#">See all messages</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- inbox notificatoin end -->
-                    <!-- alert notification start-->
-                    <li id="alert_notificatoin_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-
-                            <i class="icon-bell-l"></i>
-                            <span class="badge bg-important">7</span>
-                        </a>
-                        <ul class="dropdown-menu extended notification">
-                            <div class="notify-arrow notify-arrow-blue"></div>
-                            <li>
-                                <p class="blue">You have 4 new notifications</p>
-                            </li>
-                            
-                        
-                                <a href="#">See all notifications</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- alert notification end-->
-                    <!-- user login dropdown start-->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="img/avatar1_small.jpg">
-                            </span>
-                            <span class="username">Jenifer Smith</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            
-                            <li>
-                                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
-                            </li>
-                           
-                        
-                            <li>
-                                <a href="login.php"><i class="icon_key_alt"></i> Log Out</a>
-                            </li>
-                            
-                        
-                        </ul>
-                    </li>
-                    <!-- user login dropdown end -->
-                </ul>
-                <!-- notificatoin dropdown end-->
-            </div>
-      </header>      
-      <!--header end-->
-
-           <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
-                  <li class="active">
-                      <a class="" href="index.php">
-                          <i class="icon_house_alt"></i>
-                          <span>Tableau de bord</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Utilisateurs</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="ajout_user.php">Ajout utilisateurs</a></li>                          
-                          <li><a class="" href="supp_user.php">Suppression utilisateurs</a></li>
-                      </ul>
-                  </li>       
-                  <li class="sub-menu">
-                      <a href="ville.php" class="">
-                          <i class="icon_desktop"></i>
-                          <span>Villes</span>
-                          
-                      </a>
-                      
-                  </li>
-                 
-                   <li class="sub-menu">
-                      <a href="categories.php" class="">
-                          <i class="icon_table"></i>
-                          <span>Catégories</span>
-                          
-                      </a>
-                    
-                  </li>
-
-
-                  <li>                     
-                      <a class="" href="chart-chartjs.php">
-                          <i class="icon_piechart"></i>
-                          <span>Charts</span>
-                          
-                      </a>
-                                         
-                  </li>
-                             
-                 
-                  
-                  <li class="sub-menu">
-                      <a href="deconnexion.php" class="">
-                          <i class="icon_documents_alt"></i>
-                          <span>Page de login</span>
-                         
-                      </a>
-                     
-                  </li>
-                  
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
+    <?php
+		include('menu.html');
+	?>
 
       <!--main content start-->
       <section id="main-content">
@@ -220,64 +61,127 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                             Form Elements
+                            
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal " method="get">
+                              <form class="form-horizontal " method="POST">
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Default</label>
+                                      <label class="col-sm-2 control-label">Nom</label>
                                       <div class="col-sm-10">
                                           <input type="text" class="form-control">
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Help text</label>
+                                      <label class="col-sm-2 control-label">Prenom</label>
                                       <div class="col-sm-10">
                                           <input type="text" class="form-control">
-                                          <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                                       </div>
                                   </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Rounder</label>
+								  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Adresse Email</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input">
+                                          <input type="text" class="form-control">
                                       </div>
                                   </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Input focus</label>
-                                      <div class="col-sm-10">
-                                          <input class="form-control" id="focusedInput" type="text" value="This is focused...">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Disabled</label>
-                                      <div class="col-sm-10">
-                                          <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Placeholder</label>
-                                      <div class="col-sm-10">
-                                          <input type="text"  class="form-control" placeholder="placeholder">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
+								   <div class="form-group">
                                       <label class="col-sm-2 control-label">Password</label>
                                       <div class="col-sm-10">
-                                          <input type="password"  class="form-control" placeholder="">
+                                          <input type="text"  class="form-control" placeholder="">
+                                      </div>
+                                  </div>
+								  
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Date de naissance</label>
+                                      <div class="col-sm-10">
+                                          <input type="date" name="date">
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label class="col-lg-2 control-label">Static control</label>
-                                      <div class="col-lg-10">
-                                          <p class="form-control-static">email@example.com</p>
+                                      <label class="col-sm-2 control-label">Sexe</label>
+                                      <div class="col-sm-10">
+                                          <input type="radio" name="gender" value="male"> Homme </input>&nbsp
+										  <input type="radio" name="gender" value="female"> Femme </input>
                                       </div>
                                   </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Téléphone</label>
+                                      <div class="col-sm-10">
+                                          <input type="text" class="form-control">
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Photo</label>
+                                      <div class="col-sm-10">
+                                           <input type="file" name="photo">
+										  
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Niveau de permission</label>
+                                      <div class="col-sm-10">
+										<input type="checkbox" name="1" id="perm_1" /> <label for="1">1</label>&nbsp
+										<input type="checkbox" name="2" id="perm_2" /> <label for="2">2</label>&nbsp
+										<input type="checkbox" name="3" id="perm_3" /> <label for="3">3</label>&nbsp
+										<input type="checkbox" name="4" id="perm_4" /> <label for="4">4</label>&nbsp
+										<input type="checkbox" name="5" id="perm_5" /> <label for="5">5</label>&nbsp
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Superviseur</label>
+                                      <div class="col-sm-10">
+                                          <input type="radio" name="Supervisor" value="True"> Oui </input>&nbsp
+										  <input type="radio" name="Supervisor" value="False"> Non </input>
+                                      </div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Membre du staff</label>
+                                      <div class="col-sm-10">
+                                          <input type="radio" name="m_staff" value="True"> Oui </input>&nbsp
+										  <input type="radio" name="m_staff" value="False"> Non </input>
+                                      </div>
+                                  </div>
+								   <div class="form-group">
+                                      <label class="col-sm-2 control-label">Cadre Socio-Professionnel</label>
+                                      <div class="col-sm-10">
+									  <select name="csp" class="form" id="csp"> 
+										   <option value="agriculteur">agriculteur</option>
+										   <option value="artisans,comm,cent.">artisans,comm,cent. </option>
+										   <option value="cadres et professions intellectuels">cadres et professions intellectuels </option>
+										   <option value="chomage">chomage </option>
+										   <option value="employés">employés </option>
+										   <option value="ouvriers">ouvriers</option>
+										   <option value="profession intermédiaire">profession intermédiaire </option>
+										   <option value="retraités">retraités </option> 
+										   <option value="autres">autres </option>
+									  </select>
+                                      </div>
+                                  </div>
+								  <!--<div class="form-group" align="center">
+                                      <div class="col-sm-10">
+                                         <button onclick="csp()">Ajouter</button>&nbsp
+                                      </div>
+									  <script>
+									  function csp(){
+										  var x = document.getElementById("csp").selectedIndex
+										  alert(document.getElementsByTagName("option")[x].value)
+									  }
+									  </script>
+                                  </div>-->
                               </form>
+							  	  <div class="form-group" align="center">
+                                      <div class="col-sm-10">
+                                         <button onclick="csp()">Ajouter</button>&nbsp
+                                      </div>
+									  <script>
+									  function csp(){
+										  var x = document.getElementById("csp").selectedIndex
+										  alert(document.getElementsByTagName("option")[x].value)
+									  }
+									  </script>
+                                  </div>
                           </div>
                       </section>
                     
-      
       <!--main content end-->
   </section>
   <!-- container section end -->

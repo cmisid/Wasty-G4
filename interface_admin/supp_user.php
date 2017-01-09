@@ -11,7 +11,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Form Component | Creative - Bootstrap 3 Responsive Admin Template</title>
+    <title>Suppression utilisateur</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -41,168 +41,9 @@
 
   <!-- container section start -->
   <section id="container" class="">
-      <!--header start-->
-      <header class="header dark-bg">
-            <div class="toggle-nav">
-                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
-            </div>
-
-            <!--logo start-->
-           <a href="index.php" class="logo">Administrateur</a>
-            <!--logo end-->
-
-            <div class="nav search-row" id="top_menu">
-                <!--  search form start -->
-                <ul class="nav top-menu">                    
-                    <li>
-                        <form class="navbar-form">
-                            <input class="form-control" placeholder="Search" type="text">
-                        </form>
-                    </li>                    
-                </ul>
-                <!--  search form end -->                
-            </div>
-
-            <div class="top-nav notification-row">                
-                <!-- notificatoin dropdown start-->
-               <ul class="nav pull-right top-menu">
-                    
-                   
-                    <!-- inbox notificatoin start-->
-                    <li id="mail_notificatoin_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-envelope-l"></i>
-                            <span class="badge bg-important">5</span>
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-blue"></div>
-                            <li>
-                                <p class="blue">You have 5 new messages</p>
-                            </li>
-                            
-                          
-                            <li>
-                                <a href="#">See all messages</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- inbox notificatoin end -->
-                    <!-- alert notification start-->
-                    <li id="alert_notificatoin_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-
-                            <i class="icon-bell-l"></i>
-                            <span class="badge bg-important">7</span>
-                        </a>
-                        <ul class="dropdown-menu extended notification">
-                            <div class="notify-arrow notify-arrow-blue"></div>
-                            <li>
-                                <p class="blue">You have 4 new notifications</p>
-                            </li>
-                            
-                        
-                                <a href="#">See all notifications</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- alert notification end-->
-                    <!-- user login dropdown start-->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="img/avatar1_small.jpg">
-                            </span>
-                            <span class="username">Jenifer Smith</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            
-                            <li>
-                                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
-                            </li>
-                           
-                        
-                            <li>
-                                <a href="login.php"><i class="icon_key_alt"></i> Log Out</a>
-                            </li>
-                            
-                        
-                        </ul>
-                    </li>
-                    <!-- user login dropdown end -->
-                </ul>
-                <!-- notificatoin dropdown end-->
-            </div>
-      </header>      
-      <!--header end-->
-
-           <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu">                
-                  <li class="active">
-                      <a class="" href="index.php">
-                          <i class="icon_house_alt"></i>
-                          <span>Tableau de bord</span>
-                      </a>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Utilisateurs</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="ajout_user.php">Ajout utilisateurs</a></li>                          
-                          <li><a class="" href="supp_user.php">Suppression utilisateurs</a></li>
-                      </ul>
-                  </li>       
-                  <li class="sub-menu">
-                      <a href="ville.php" class="">
-                          <i class="icon_desktop"></i>
-                          <span>Villes</span>
-                          
-                      </a>
-                      
-                  </li>
-                 
-                   <li class="sub-menu">
-                      <a href="categories.php" class="">
-                          <i class="icon_table"></i>
-                          <span>Catégories</span>
-                          
-                      </a>
-                    
-                  </li>
-
-
-                  <li>                     
-                      <a class="" href="chart-chartjs.php">
-                          <i class="icon_piechart"></i>
-                          <span>Charts</span>
-                          
-                      </a>
-                                         
-                  </li>
-                             
-                 
-                  
-                  <li class="sub-menu">
-                      <a href="deconnexion.php" class="">
-                          <i class="icon_documents_alt"></i>
-                          <span>Page de login</span>
-                         
-                      </a>
-                     
-                  </li>
-                  
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
+    <?php
+		include('menu.html');
+	?>
 
       <!--main content start-->
       <section id="main-content">
@@ -220,59 +61,23 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                             Form Elements
+                           
                           </header>
                           <div class="panel-body">
                               <form class="form-horizontal " method="get">
                                   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Default</label>
+                                      <label class="col-sm-2 control-label">Utilisateurs</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control">
+                                          <select name="email" class="form" id="email"></select>
                                       </div>
                                   </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Help text</label>
+								  						 
+                                  <div class="form-group" align="center">
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control">
-                                          <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                                         <input type="submit" name="bouton" value="Supprimer"></input>&nbsp
                                       </div>
                                   </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Rounder</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control round-input">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Input focus</label>
-                                      <div class="col-sm-10">
-                                          <input class="form-control" id="focusedInput" type="text" value="This is focused...">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Disabled</label>
-                                      <div class="col-sm-10">
-                                          <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Placeholder</label>
-                                      <div class="col-sm-10">
-                                          <input type="text"  class="form-control" placeholder="placeholder">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Password</label>
-                                      <div class="col-sm-10">
-                                          <input type="password"  class="form-control" placeholder="">
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label class="col-lg-2 control-label">Static control</label>
-                                      <div class="col-lg-10">
-                                          <p class="form-control-static">email@example.com</p>
-                                      </div>
-                                  </div>
+								 
                               </form>
                           </div>
                       </section>

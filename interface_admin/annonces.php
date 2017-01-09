@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php
-	include('./php/checkAuth.php');
-?>
+	<?php
+		include('./php/checkAuth.php');
+	?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Gestion des categories</title>
+    <title>Gestion des annonce</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,8 +28,7 @@
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
-
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
@@ -39,7 +38,8 @@
     <![endif]-->
 
 
-<script>
+
+    <script>
   $(document).ready(function() {
   $(".search").keyup(function () {
     var searchTerm = $(".search").val();
@@ -88,9 +88,7 @@ $("#mytable #checkall").click(function () {
 
 </script>
 
-
-
-  <style>
+ <style>
   body{
   padding:20px 20px;
 }
@@ -110,6 +108,7 @@ $("#mytable #checkall").click(function () {
 }
   </style>
 
+
   </head>
   <body>
 
@@ -124,43 +123,27 @@ $("#mytable #checkall").click(function () {
           <section class="wrapper">
           <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-file-text-o"></i> Catégories</h3>
+                    <h3 class="page-header"><i class="fa fa-file-text-o"></i> Annonces</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="accueil.html">Home</a></li>
-                       
+                     
                     </ol>
                 </div>
             </div>
               <div class="row">
                   <div class="col-lg-12">
-                      <section class="panel">
-                          <header class="panel-heading">
-                             Ajout catégorie
-                          </header>
-                          <div class="panel-body">
-                              <form class="form-horizontal " method="get">
-                           <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nom catégorie</label>
-                                      <div class="col-sm-10">
-                                          <input type="text" class="form-control" placeholder="Saisir le nom de la ville">
-                                          <br>
-
-                                    
-                                      </div>
-
-
-                                  </div>
-                                 
-                                 <button type="submit" class="btn btn-primary">Enregistrer</button>
-                      
-                          </form>
-                      </section>
                     
-                    <div class="row">
+
+
+
+
+
+
+                  <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                            Liste des catégories
+                            Liste des annonces
                           </header>
                           <div class="panel-body">
                              
@@ -175,9 +158,12 @@ $("#mytable #checkall").click(function () {
   <thead>
     <tr>
       <th>#</th>
-      <th class="col-md-5 col-xs-5">Catégorie</th>
-      
-       <th>Edit</th>            
+       <th class="col-md-5 col-xs-5">Date</th>
+      <th >Utilisateur</th>
+       <th>titre</th>
+      <th>Sous Catégorie</th>
+     
+               
       <th>Delete</th>
     </tr>
     <tr class="warning no-result">
@@ -187,30 +173,40 @@ $("#mytable #checkall").click(function () {
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Catégorie 1</td>
-      
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" > <span class="glyphicon glyphicon-pencil"></span></button></p></td>
+      <td>12/01/2016</td>
+      <td>Utilisateur 1</td>
+      <td>Annonce 1</td>
+      <td>Vere</td>
+     
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      
-      <td>Catégorie 2</td>
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+      <td>22/05/2016</td>
+      <td>Utilisateur 2</td>
+      <td>Annonce 2</td>
+      <td>Métal</td>
+    
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">3</th>
       
-      <td>Catégorie 3</td>
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+     <td>02/12/2016</td>
+      <td>Utilisateur 3</td>
+      <td>Annonce 3</td>
+      <td>Vere</td>
+   
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>Catégorie 4</td>
+      <td>30/10/2016</td>
+      <td>Utilisateur 4</td>
+      <td>Annonce 4</td>
+      <td>Métal</td>
       
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+   
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
   </tbody>
@@ -221,29 +217,7 @@ $("#mytable #checkall").click(function () {
 
 
 
-<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-      <div class="modal-dialog">
-    <div class="modal-content">
-          <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Modification catégorie</h4>
-      </div>
-          <div class="modal-body">
-          <div class="form-group">
-            <label>Nom catégorie</label>
-        <input class="form-control " type="text" >
-        </div>
-        
-        
-      </div>
-          <div class="modal-footer ">
-        <button type="button" class="btn btn-warning btn-lg" style="width: 100%;">Modifier </button>
-      </div>
-        </div>
-    <!-- /.modal-content --> 
-  </div>
-      <!-- /.modal-dialog --> 
-    </div>
+
     
     
     
@@ -275,9 +249,9 @@ $("#mytable #checkall").click(function () {
 
                           </div>
                       </section>
-                    </div>
-                  </div>
-
+</div>
+</div>
+                    
       
       <!--main content end-->
   </section>

@@ -11,7 +11,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Gestion des categories</title>
+    <title>Gestion des sous-categories</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
 
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
@@ -124,7 +124,7 @@ $("#mytable #checkall").click(function () {
           <section class="wrapper">
           <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-file-text-o"></i> Catégories</h3>
+                    <h3 class="page-header"><i class="fa fa-file-text-o"></i>Sous Catégories</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="accueil.html">Home</a></li>
                        
@@ -135,32 +135,45 @@ $("#mytable #checkall").click(function () {
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                             Ajout catégorie
+                             Ajout sous catégorie
                           </header>
                           <div class="panel-body">
                               <form class="form-horizontal " method="get">
-                           <div class="form-group">
-                                      <label class="col-sm-2 control-label">Nom catégorie</label>
+                             <div class="form-group">
+                                      <label class="col-sm-2 control-label">Nom sous catégorie</label>
                                       <div class="col-sm-10">
                                           <input type="text" class="form-control" placeholder="Saisir le nom de la ville">
-                                          <br>
-
-                                    
+                                         
                                       </div>
 
+                                    </div>
 
-                                  </div>
-                                 
-                                 <button type="submit" class="btn btn-primary">Enregistrer</button>
-                      
-                          </form>
+                                    <div class="form-group">
+                                      <label class="col-sm-2 control-label">Catégorie</label>
+                                      <div class="dropdown col-sm-10">
+                                         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                                          <span class="caret"></span></button>
+                                       <ul    class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Categorie 1</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Catégorie 2</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Catégorie 3</a></li>
+                                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Catégorie 4</a></li>
+                                       </ul>
+
+                                       </div> 
+                                     </div>
+
+                                         <button type="submit" class="btn btn-primary">Enregistrer</button>
+                              
+                              </form>
+                          </div>
                       </section>
                     
-                    <div class="row">
+                     <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                            Liste des catégories
+                            Liste des sous catégories
                           </header>
                           <div class="panel-body">
                              
@@ -175,7 +188,8 @@ $("#mytable #checkall").click(function () {
   <thead>
     <tr>
       <th>#</th>
-      <th class="col-md-5 col-xs-5">Catégorie</th>
+      <th class="col-md-5 col-xs-5">Sous catégorie</th>
+      <th>Catégorie</th>
       
        <th>Edit</th>            
       <th>Delete</th>
@@ -187,32 +201,29 @@ $("#mytable #checkall").click(function () {
   <tbody>
     <tr>
       <th scope="row">1</th>
+      <td>Sous Catégorie 1</td>
       <td>Catégorie 1</td>
-      
+
       <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" > <span class="glyphicon glyphicon-pencil"></span></button></p></td>
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">2</th>
       
-      <td>Catégorie 2</td>
+      <td>Sous Catégorie 2</td>
+      <td> Catégorie 2</td>
       <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">3</th>
       
+      <td>Sous Catégorie 3</td>
       <td>Catégorie 3</td>
       <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Catégorie 4</td>
-      
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
+   
   </tbody>
 </table>
 
@@ -226,13 +237,18 @@ $("#mytable #checkall").click(function () {
     <div class="modal-content">
           <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Modification catégorie</h4>
+        <h4 class="modal-title custom_align" id="Heading">Modification sous catégorie</h4>
       </div>
           <div class="modal-body">
           <div class="form-group">
-            <label>Nom catégorie</label>
+            <label>Nom sous catégorie</label>
         <input class="form-control " type="text" >
         </div>
+        <div class="form-group">
+            <label>Catégorie</label>
+        <input class="form-control " type="text" >
+        </div>
+        
         
         
       </div>
@@ -275,9 +291,8 @@ $("#mytable #checkall").click(function () {
 
                           </div>
                       </section>
-                    </div>
-                  </div>
-
+                      </div>
+                      </div>
       
       <!--main content end-->
   </section>
