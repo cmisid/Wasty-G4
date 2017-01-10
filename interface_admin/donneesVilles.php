@@ -1,14 +1,6 @@
 <?php
-	$city = $_POST['city'];
-	
-
-	$donnees = "{\"Cities\": [{
-		\"city\": \"$city\",
-		
-}]}";
-	
-	echo $donnees;
-	
+	$city = $_POST['city'];	
+	$donnees = '[{"city": "'.$city.'"}]}';	
 	$handle = fopen("city.json", "w+");
 	fputs($handle,$donnees);
 	fclose($handle);

@@ -1,16 +1,8 @@
 <?php
 	$category = $_POST['category'];
-	
-	
-
-	$donnees = "{\"Districts\": [{
-		\"category\": \"$category\",
-		
-	
-}]}";
-	
-	echo $donnees;
-	
+	$donnees = '[{
+		"category": "'.$category.'",
+	}]';
 	$handle = fopen("category.json", "w+");
 	fputs($handle,$donnees);
 	fclose($handle);
