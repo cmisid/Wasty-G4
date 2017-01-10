@@ -5,10 +5,7 @@
 		include('./php/checkAuth.php');
 	?>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Suppression utilisateur</title>
@@ -36,17 +33,17 @@
       <script src="js/lte-ie7.js"></script>
     <![endif]-->
 
-  </head>
-  <body>
+	</head>
+	<body>
 
-  <!-- container section start -->
-  <section id="container" class="">
+	<!-- container section start -->
+	<section id="container" class="">
     <?php
 		include('menu.html');
 	?>
 
-      <!--main content start-->
-      <section id="main-content">
+    <!--main content start-->
+    <section id="main-content">
           <section class="wrapper">
           <div class="row">
                 <div class="col-lg-12">
@@ -64,19 +61,25 @@
                            
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal " method="get">
-                                  <div class="form-group">
-                                      <label class="col-sm-2 control-label">Utilisateurs</label>
-                                      <div class="col-sm-10">
-                                          <select name="email" class="form" id="email"></select>
-                                      </div>
-                                  </div>
-								  						 
-                                  <div class="form-group" align="center">
-                                      <div class="col-sm-10">
-                                         <input type="submit" name="bouton" value="Supprimer"></input>&nbsp
-                                      </div>
-                                  </div>
+                              <form class="form-horizontal " method="post"  action="form_delete_user.php">
+									<div class="form-group">
+										  <label class="col-sm-2 control-label">Adresse Email</label>
+										  <div class="col-sm-10">
+											  <input type="email" class="form-control" name="email" required>
+										  </div>
+									</div>
+									<!-- <div class="form-group">
+										  <label class="col-sm-2 control-label">Utilisateurs</label>
+										  <div class="col-sm-10">
+											  <select name="email" class="form" id="email"></select>
+										  </div>
+									</div> -->
+									
+									<div class="form-group" align="center">
+										<div class="col-sm-10">
+											<input type="submit" name="button" value="delete"></input>&nbsp
+										</div>
+									</div>
 								 
                               </form>
                           </div>

@@ -5,13 +5,10 @@
 		include('./php/checkAuth.php');
 	?>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+   
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Form Component | Creative - Bootstrap 3 Responsive Admin Template</title>
+    <title>Modification des permissions d'un utilisateur</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +46,7 @@
           <section class="wrapper">
           <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-file-text-o"></i> Suppression utilisateurs</h3>
+                    <h3 class="page-header"><i class="fa fa-file-text-o"></i> Modification des permissions d'un utilisateur</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
                         
@@ -63,27 +60,32 @@
                            
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal " method="get">
+                              <form class="form-horizontal " method="post" >
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Adresse Email</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control">
+                                          <input type="email" class="form-control" name="email" required>
                                       </div>
                                   </div>
 								  <div class="form-group">
                                       <label class="col-sm-2 control-label">Niveau de permission</label>
 								  		<div class="col-sm-10">
-										<input type="checkbox" name="1" id="perm_1" /> <label for="1">1</label>&nbsp
+										<!-- <input type="checkbox" name="1" id="perm_1" /> <label for="1">1</label>&nbsp
 										<input type="checkbox" name="2" id="perm_2" /> <label for="2">2</label>&nbsp
 										<input type="checkbox" name="3" id="perm_3" /> <label for="3">3</label>&nbsp
 										<input type="checkbox" name="4" id="perm_4" /> <label for="4">4</label>&nbsp
-										<input type="checkbox" name="5" id="perm_5" /> <label for="5">5</label>&nbsp
+										<input type="checkbox" name="5" id="perm_5" /> <label for="5">5</label>&nbsp -->
+										<input type="radio" name="permission" value="1" required> 1 </input>&nbsp
+										<input type="radio" name="permission" value="2" required> 2 </input>&nbsp
+										<input type="radio" name="permission" value="3" required> 3 </input>&nbsp
+										<input type="radio" name="permission" value="4" required> 4 </input>&nbsp
+										<input type="radio" name="permission" value="5" required> 5 </input>
                                       </div>
                                   </div>
 								  
                                   <div class="form-group" align="center">
                                       <div class="col-sm-10">
-                                         <input type="submit" name="bouton" value="modifier"></input>&nbsp
+                                         <input type="submit" name="button" value="modify"></input>&nbsp
                                       </div>
                                   </div>
 								 

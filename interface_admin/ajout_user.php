@@ -56,40 +56,40 @@
               <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
-                          <header class="panel-heading">
+                          <!--<header class="panel-heading">
                             
-                          </header>
+                          </header>-->
                           <div class="panel-body">
-                              <form class="form-horizontal" method="post" action="donneesUtilisateurs.php">
+                              <form class="form-horizontal" method="post" action="form_add_user.php">
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nom</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="nom" id="nom" required>
+                                          <input type="text" class="form-control" name="last_name" id="last_name" required>
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Prenom</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control" name ="prenom" id="prenom" required>
+                                          <input type="text" class="form-control" name ="first_name" id="first_name" required>
                                       </div>
                                   </div>
 								  <div class="form-group">
                                       <label class="col-sm-2 control-label">Adresse Email</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="email" id="email" required>
+                                          <input type="email" class="form-control" name="email" id="email" required>
                                       </div>
                                   </div>
 								   <div class="form-group">
                                       <label class="col-sm-2 control-label">Password</label>
                                       <div class="col-sm-10">
-                                          <input type="password"  class="form-control" name="mdp" id="mdp" required>
+                                          <input type="text"  class="form-control" name="password" id="password" required>
                                       </div>
                                   </div>
 								  
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Date de naissance</label>
                                       <div class="col-sm-10">
-                                          <input type="date" name="dateN" required>
+                                          <input type="date" name="birthday" required>
                                       </div>
                                   </div>
                                   <div class="form-group">
@@ -102,9 +102,10 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Téléphone</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="telephone" required>
+                                          <input type="text" class="form-control" name="phone_number" required>
                                       </div>
                                   </div>
+								  
                                   <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Photo</label>
                                       <div class="col-sm-10">
@@ -112,21 +113,35 @@
 										  
                                       </div>
                                   </div>-->
+								  
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Niveau de permission</label>
                                       <div class="col-sm-10">
-										<input type="checkbox" name="niv_permission[]" id="perm_1" value="1"/> <label for="perm_1">1</label>&nbsp
+										<!--<input type="checkbox" name="niv_permission[]" id="perm_1" value="1"/> <label for="perm_1">1</label>&nbsp
 										<input type="checkbox" name="niv_permission[]" id="perm_2" value="2"/> <label for="perm_2">2</label>&nbsp
 										<input type="checkbox" name="niv_permission[]" id="perm_3" value="3"/> <label for="perm_3">3</label>&nbsp
 										<input type="checkbox" name="niv_permission[]" id="perm_4" value="4"/> <label for="perm_4">4</label>&nbsp
-										<input type="checkbox" name="niv_permission[]" id="perm_5" value="5"/> <label for="perm_5">5</label>&nbsp
+										<input type="checkbox" name="niv_permission[]" id="perm_5" value="5"/> <label for="perm_5">5</label>&nbsp-->
+										<input type="radio" name="permission" value="1" required> 1 </input>&nbsp
+										<input type="radio" name="permission" value="2" required> 2 </input>&nbsp
+										<input type="radio" name="permission" value="3" required> 3 </input>&nbsp
+										<input type="radio" name="permission" value="4" required> 4 </input>&nbsp
+										<input type="radio" name="permission" value="5" required> 5 </input>
+                                      </div>
+                                  </div>
+								  <div class="form-group">
+                                      <label class="col-sm-2 control-label">Taille du véhicule</label>
+                                      <div class="col-sm-10">
+										<input type="radio" name="car_size" value="small" required> petite </input>&nbsp
+										<input type="radio" name="car_size" value="average" required> moyenne </input>&nbsp
+										<input type="radio" name="car_size" value="big" required> grande </input>
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Superviseur</label>
                                       <div class="col-sm-10">
-                                          <input type="radio" name="Supervisor" value="True"> Oui </input>&nbsp
-										  <input type="radio" name="Supervisor" value="False" checked> Non </input>
+                                          <input type="radio" name="supervisor" value="True" > Oui </input>&nbsp
+										  <input type="radio" name="supervisor" value="False" checked> Non </input>
                                       </div>
                                   </div>
                                   <div class="form-group">
@@ -135,36 +150,36 @@
                                           <input type="radio" name="m_staff" value="True"> Oui </input>&nbsp
 										  <input type="radio" name="m_staff" value="False" checked> Non </input>
                                       </div>
-                                  </div>
-								   <div class="form-group">
+                                    </div>
+								    <div class="form-group">
                                       <label class="col-sm-2 control-label">Cadre Socio-Professionnel</label>
                                       <div class="col-sm-10">
-									  <select name="csp" class="form" id="csp"> 
-										   <option value="agriculteur">agriculteur</option>
+									  <select name="csp" class="form" id="csp" required> 
+										   <option value="farmer">agriculteur</option>
 										   <option value="artisans">artisans,comm,cent. </option>
-										   <option value="cadres et professions intellectuels">cadres et professions intellectuels </option>
-										   <option value="chomage">chomage </option>
-										   <option value="employés">employés </option>
-										   <option value="ouvriers">ouvriers</option>
-										   <option value="profession intermédiaire">profession intermédiaire </option>
-										   <option value="retraités">retraités </option> 
-										   <option value="autres">autres </option>
+										   <option value="senior executives">cadres et professions intellectuels </option>
+										   <option value="unemployment ">chomage </option>
+										   <option value="employees">employés </option>
+										   <option value="worker">ouvriers</option>
+										   <option value="intermediate profession">profession intermédiaire </option>
+										   <option value="retiree">retraités </option> 
+										   <option value="other">autres </option>
 									  </select>
                                       </div>
-                                  </div>
-								  <div class="form-group" align="center">
+                                    </div>
+								    <div class="form-group" align="center">
                                       <div class="col-sm-10">
 										<input type="submit">
                                       </div>
-								  </div>
+								    </div>
                               </form>
 							  
                           </div>
                       </section>
                     
       <!--main content end-->
-  </section>
-  <!-- container section end -->
+	</section>
+	<!-- container section end -->
     <!-- javascripts -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>

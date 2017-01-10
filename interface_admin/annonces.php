@@ -5,12 +5,9 @@
     ?>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>Gestion des annonce</title>
+    <title>Gestion des annonces</title>
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
@@ -24,6 +21,7 @@
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/divert_style.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
@@ -58,9 +56,7 @@
         else {$('.no-result').hide();}
           });
       });
-    </script>
-    <script>
-      $(document).ready(function(){
+          $(document).ready(function(){
       $("#mytable #checkall").click(function () {
               if ($("#mytable #checkall").is(':checked')) {
                   $("#mytable input[type=checkbox]").each(function () {
@@ -78,22 +74,8 @@
       });
       
     </script>
-    <style>
-      body{
-      padding:20px 20px;
-      }
-      .results tr[visible='false'],
-      .no-result{
-      display:none;
-      }
-      .results tr[visible='true']{
-      display:table-row;
-      }
-      .counter{
-      padding:8px; 
-      color:#ccc;
-      }
-    </style>
+    
+   
   </head>
   <body>
     <!-- container section start -->
@@ -122,7 +104,7 @@
             </header>
             <div class="panel-body">
               <div class="form-group pull-right">
-                <input type="text" class="search form-control" placeholder="What you looking for?">
+                <input type="text" class="search form-control" placeholder="Que cherchez vous?">
               </div>
               <span class="counter pull-right"></span>
               <table class="table table-hover table-bordered results">
@@ -133,10 +115,10 @@
                     <th >Utilisateur</th>
                     <th>titre</th>
                     <th>Sous Catégorie</th>
-                    <th>Delete</th>
+                    <th>Supprimer</th>
                   </tr>
                   <tr class="warning no-result">
-                    <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+                    <td colspan="4"><i class="fa fa-warning"></i> Aucun résultat</td>
                   </tr>
                 </thead>
                 <tbody>

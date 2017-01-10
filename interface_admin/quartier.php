@@ -5,10 +5,6 @@
 	?>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Gestion des quartiers</title>
@@ -140,7 +136,7 @@ $("#mytable #checkall").click(function () {
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nom quartier</label>
                                       <div class="col-sm-10"  >
-                                          <input type="text" name="district_name" class="form-control" placeholder="Saisir le nom de la ville">
+                                          <input type="text" name="district_name" class="form-control" placeholder="Saisir le nom de la ville" required>
                                          
                                       </div>
 
@@ -160,7 +156,7 @@ $("#mytable #checkall").click(function () {
                                        <div class="form-group">
                                         <label class="col-sm-2 control-label">Densité</label>
                                         <div class="col-sm-10"  >
-                                        <input type="text" class="form-control" name="density" placeholder="Saisir la densité">
+                                        <input type="text" class="form-control" name="density" placeholder="Saisir la densité" required>
                                          
                                         </div>
                                       </div>
@@ -168,7 +164,7 @@ $("#mytable #checkall").click(function () {
                                         <div class="form-group">
                                         <label class="col-sm-2 control-label">Polygone</label>
                                           <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="polygon" placeholder="Saisir la densité">
+                                        <input type="text" class="form-control" name="polygon" placeholder="Saisir la densité" required>
                                          
                                         </div>
                                         </div>
@@ -181,11 +177,6 @@ $("#mytable #checkall").click(function () {
                               </form>
                           </div>
                       </section>
-
-
-
-
-
 
                   <div class="row">
                   <div class="col-lg-12">
@@ -226,17 +217,17 @@ $("#mytable #checkall").click(function () {
       <td>2000000</td>
       <td></td>
       
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" > <span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+      <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" > <span class="glyphicon glyphicon-pencil"></span></button></p></td>
+    <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">2</th>
-       <td>Quartier Paris</td>
+      <td>Quartier Paris</td>
       <td>Paris</td>
       <td>5000000</td>
       <td></td>
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+      <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+    <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">3</th>
@@ -245,8 +236,8 @@ $("#mytable #checkall").click(function () {
       <td>Bordeaux</td>
       <td>3500000</td>
       <td></td>
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+      <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+    <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">4</th>
@@ -255,8 +246,8 @@ $("#mytable #checkall").click(function () {
       <td>4000000</td>
       <td></td>
       
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+      <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+    <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
   </tbody>
 </table>
@@ -276,19 +267,19 @@ $("#mytable #checkall").click(function () {
           <div class="modal-body">
           <div class="form-group">
             <label>Nom Quartier</label>
-        <input class="form-control " name="district_name" type="text" >
+			<input class="form-control" name="district_name" type="text" reqired>
         </div>
-        <div class="form-group">
+		<div class="form-group">
             <label>Ville</label>
-        <input class="form-control " name="city_name" type="text" >
+			<input class="form-control" name="city_name" type="text" required>
         </div>
         <div class="form-group">
             <label>Densité</label>
-        <input class="form-control " name="density" type="text" >
+			<input class="form-control" name="density" type="text" required>
         </div>
         <div class="form-group">
             <label>Polygone</label>
-        <input class="form-control " name="polygon" type="text" >
+			<input class="form-control" name="polygon" type="text" required>
         </div>
         
       </div>
