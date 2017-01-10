@@ -5,13 +5,9 @@
 		include('./php/checkAuth.php');
 	?>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Form Component | Creative - Bootstrap 3 Responsive Admin Template</title>
+    <title>Ajout utilisateur</title>
 
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -68,45 +64,45 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nom</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="nom" id="nom">
+                                          <input type="text" class="form-control" name="nom" id="nom" required>
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Prenom</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control" name ="prenom" id="prenom">
+                                          <input type="text" class="form-control" name ="prenom" id="prenom" required>
                                       </div>
                                   </div>
 								  <div class="form-group">
                                       <label class="col-sm-2 control-label">Adresse Email</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="email" id="email">
+                                          <input type="text" class="form-control" name="email" id="email" required>
                                       </div>
                                   </div>
 								   <div class="form-group">
                                       <label class="col-sm-2 control-label">Password</label>
                                       <div class="col-sm-10">
-                                          <input type="text"  class="form-control" name="mdp" id="mdp">
+                                          <input type="password"  class="form-control" name="mdp" id="mdp" required>
                                       </div>
                                   </div>
 								  
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Date de naissance</label>
                                       <div class="col-sm-10">
-                                          <input type="date" name="dateN">
+                                          <input type="date" name="dateN" required>
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Sexe</label>
                                       <div class="col-sm-10">
-                                          <input type="radio" name="gender" value="male"> Homme </input>&nbsp
-										  <input type="radio" name="gender" value="female"> Femme </input>
+                                          <input type="radio" name="gender" value="male" required> Homme </input>&nbsp
+										  <input type="radio" name="gender" value="female" required> Femme </input>
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Téléphone</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control" name="telephone">
+                                          <input type="text" class="form-control" name="telephone" required>
                                       </div>
                                   </div>
                                   <!--<div class="form-group">
@@ -130,14 +126,14 @@
                                       <label class="col-sm-2 control-label">Superviseur</label>
                                       <div class="col-sm-10">
                                           <input type="radio" name="Supervisor" value="True"> Oui </input>&nbsp
-										  <input type="radio" name="Supervisor" value="False"> Non </input>
+										  <input type="radio" name="Supervisor" value="False" checked> Non </input>
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Membre du staff</label>
                                       <div class="col-sm-10">
                                           <input type="radio" name="m_staff" value="True"> Oui </input>&nbsp
-										  <input type="radio" name="m_staff" value="False"> Non </input>
+										  <input type="radio" name="m_staff" value="False" checked> Non </input>
                                       </div>
                                   </div>
 								   <div class="form-group">
