@@ -231,8 +231,8 @@ $("#mytable #checkall").click(function () {
       <td>2000000</td>
       <td></td>
       
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" > <span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+      <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" > <span class="glyphicon glyphicon-pencil"></span></button></p></td>
+    <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">2</th>
@@ -240,8 +240,8 @@ $("#mytable #checkall").click(function () {
       <td>Paris</td>
       <td>5000000</td>
       <td></td>
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+      <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+    <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">3</th>
@@ -250,18 +250,18 @@ $("#mytable #checkall").click(function () {
       <td>Bordeaux</td>
       <td>3500000</td>
       <td></td>
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+      <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+    <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>QuartierLyon</td>
+      <td>Quartier Lyon</td>
       <td>Lyon</td>
       <td>4000000</td>
       <td></td>
       
-      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+      <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+    <td><p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
     </tr>
   </tbody>
 </table>
@@ -300,9 +300,9 @@ $("#mytable #checkall").click(function () {
           <div class="modal-footer ">
         <button type="button" class="btn btn-warning btn-lg" style="width: 100%;">Modifier </button>
       </div>
-        </div>
+	</div>
     <!-- /.modal-content --> 
-  </div>
+	</div>
       <!-- /.modal-dialog --> 
     </div>
     
@@ -329,13 +329,8 @@ $("#mytable #checkall").click(function () {
   </div>
       <!-- /.modal-dialog --> 
     </div>
-
-
-
-
-
-                          </div>
-                      </section>
+    </div>
+    </section>
 </div>
 </div>
                     
@@ -373,6 +368,5 @@ $("#mytable #checkall").click(function () {
     <!-- custome script for all page -->
     <script src="js/scripts.js"></script>
   
-
   </body>
 </html>

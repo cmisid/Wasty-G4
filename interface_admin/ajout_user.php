@@ -35,16 +35,16 @@
       <script src="js/respond.min.js"></script>
       <script src="js/lte-ie7.js"></script>
     <![endif]-->
-
+	 
   </head>
   <body>
 
   <!-- container section start -->
   <section id="container" class="">
-    <?php
-		include('menu.html');
-	?>
-
+		<?php
+			include('menu.html');
+		?>
+      
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
@@ -64,36 +64,36 @@
                             
                           </header>
                           <div class="panel-body">
-                              <form class="form-horizontal " method="POST">
+                              <form class="form-horizontal" method="post" action="donneesUtilisateurs.php">
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Nom</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control">
+                                          <input type="text" class="form-control" name="nom" id="nom">
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Prenom</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control">
+                                          <input type="text" class="form-control" name ="prenom" id="prenom">
                                       </div>
                                   </div>
 								  <div class="form-group">
                                       <label class="col-sm-2 control-label">Adresse Email</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control">
+                                          <input type="text" class="form-control" name="email" id="email">
                                       </div>
                                   </div>
 								   <div class="form-group">
-                                      <label class="col-sm-2 control-label">Password</label>
+                                      <label class="col-sm-2 control-label">Mot de passe</label>
                                       <div class="col-sm-10">
-                                          <input type="text"  class="form-control" placeholder="">
+                                          <input type="text"  class="form-control" name="mdp" id="mdp">
                                       </div>
                                   </div>
 								  
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Date de naissance</label>
                                       <div class="col-sm-10">
-                                          <input type="date" name="date">
+                                          <input type="date" name="dateN">
                                       </div>
                                   </div>
                                   <div class="form-group">
@@ -106,24 +106,24 @@
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Téléphone</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control">
+                                          <input type="text" class="form-control" name="telephone">
                                       </div>
                                   </div>
-                                  <div class="form-group">
+                                  <!--<div class="form-group">
                                       <label class="col-sm-2 control-label">Photo</label>
                                       <div class="col-sm-10">
                                            <input type="file" name="photo">
 										  
                                       </div>
-                                  </div>
+                                  </div>-->
                                   <div class="form-group">
                                       <label class="col-sm-2 control-label">Niveau de permission</label>
                                       <div class="col-sm-10">
-										<input type="checkbox" name="1" id="perm_1" /> <label for="1">1</label>&nbsp
-										<input type="checkbox" name="2" id="perm_2" /> <label for="2">2</label>&nbsp
-										<input type="checkbox" name="3" id="perm_3" /> <label for="3">3</label>&nbsp
-										<input type="checkbox" name="4" id="perm_4" /> <label for="4">4</label>&nbsp
-										<input type="checkbox" name="5" id="perm_5" /> <label for="5">5</label>&nbsp
+										<input type="checkbox" name="niv_permission[]" id="perm_1" value="1"/> <label for="perm_1">1</label>&nbsp
+										<input type="checkbox" name="niv_permission[]" id="perm_2" value="2"/> <label for="perm_2">2</label>&nbsp
+										<input type="checkbox" name="niv_permission[]" id="perm_3" value="3"/> <label for="perm_3">3</label>&nbsp
+										<input type="checkbox" name="niv_permission[]" id="perm_4" value="4"/> <label for="perm_4">4</label>&nbsp
+										<input type="checkbox" name="niv_permission[]" id="perm_5" value="5"/> <label for="perm_5">5</label>&nbsp
                                       </div>
                                   </div>
                                   <div class="form-group">
@@ -145,7 +145,7 @@
                                       <div class="col-sm-10">
 									  <select name="csp" class="form" id="csp"> 
 										   <option value="agriculteur">agriculteur</option>
-										   <option value="artisans,comm,cent.">artisans,comm,cent. </option>
+										   <option value="artisans">artisans,comm,cent. </option>
 										   <option value="cadres et professions intellectuels">cadres et professions intellectuels </option>
 										   <option value="chomage">chomage </option>
 										   <option value="employés">employés </option>
@@ -156,29 +156,13 @@
 									  </select>
                                       </div>
                                   </div>
-								  <!--<div class="form-group" align="center">
+								  <div class="form-group" align="center">
                                       <div class="col-sm-10">
-                                         <button onclick="csp()">Ajouter</button>&nbsp
+										<input type="submit">
                                       </div>
-									  <script>
-									  function csp(){
-										  var x = document.getElementById("csp").selectedIndex
-										  alert(document.getElementsByTagName("option")[x].value)
-									  }
-									  </script>
-                                  </div>-->
+								  </div>
                               </form>
-							  	  <div class="form-group" align="center">
-                                      <div class="col-sm-10">
-                                         <button onclick="csp()">Ajouter</button>&nbsp
-                                      </div>
-									  <script>
-									  function csp(){
-										  var x = document.getElementById("csp").selectedIndex
-										  alert(document.getElementsByTagName("option")[x].value)
-									  }
-									  </script>
-                                  </div>
+							  
                           </div>
                       </section>
                     
