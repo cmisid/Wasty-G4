@@ -27,7 +27,7 @@
   </head>
   <body class="login-img3-body">
     <div class="container">
-      <form class="login-form" action="verif_connexion.php" method="post">
+      <form class="login-form" action="check_connection.php" method="post">
         <div class="login-wrap">
           <p class="login-img"><i class="icon_lock_alt"></i></p>
           <div class="input-group">
@@ -39,11 +39,9 @@
             <input type="password" class="form-control" placeholder="Password" name="mdp">
           </div>
           <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-          <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
+          <span class="pull-right"> <a href="http://www.doctissimo.fr/html/psychologie/mag_2002/mag0517/booster_memoire_niv2.htm"> Mot de passe oublié</a></span>
           </label>
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-          <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Connexion</button>
         </div>
       </form>
     </div>

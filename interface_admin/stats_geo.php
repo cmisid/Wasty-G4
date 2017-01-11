@@ -1,16 +1,21 @@
+<?php
+/* 
+Groupe[4] 
+Version : V2.1.2
+
+Ce fichier permet a l'administrateur de visualiser des graphiques géographiques montrant la répartition des utilisateurs dans les régions par exemple.
+
+Changements: mettre le traitement d'affichage des graphiques dans des fonctions.
+
+*/
+ ?>
 <!DOCTYPE html>
 <html lang="en">
-  <?php
-    include('./php/checkAuth.php');
-    ?>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>Form Component | Creative - Bootstrap 3 Responsive Admin Template</title>
+    <title>Statistiques géographiques</title>
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
@@ -81,29 +86,17 @@
       });
       
     </script>
-    <style>
-      body{
-      padding:20px 20px;
-      }
-      .results tr[visible='false'],
-      .no-result{
-      display:none;
-      }
-      .results tr[visible='true']{
-      display:table-row;
-      }
-      .counter{
-      padding:8px; 
-      color:#ccc;
-      }
-    </style>
+   
   </head>
   <body>
     <!-- container section start -->
     <section id="container" class="">
     <?php
-      include('menu.html');
-      ?>
+		session_start();
+		include('./php/checkAuth.php');
+		include('menu.php');
+		verifAuth(1);
+    ?>
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">

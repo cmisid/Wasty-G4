@@ -1,11 +1,19 @@
+<?php
+/* 
+Groupe[4] 
+Version : V2.1.2
+
+Ce fichier permet a l'administrateur de visualiser la liste des annonces, faire des recherches et supprimer des annonces .
+le traitement de suppression dans la bdd n'est pas encore fait ,les données saisies dans les formulaires sont récuperés dans des fichiers php ! 
+
+Changements: mise en forme de l'affichage du tableaux lien vers un fichier css externe.
+
+*/
+ ?>
 <!DOCTYPE html>
 <html lang="en">
-  <?php
-    include('./php/checkAuth.php');
-    ?>
   <head>
     <meta charset="utf-8">
-    
     <link rel="shortcut icon" href="img/favicon.png">
     <title>Gestion des annonces</title>
     <!-- Bootstrap CSS -->    
@@ -16,8 +24,7 @@
     <!-- font icon -->
     <link href="css/elegant-icons-style.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <!-- date picker -->
-    <!-- color picker -->
+    
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
@@ -74,15 +81,16 @@
       });
       
     </script>
-    
-   
   </head>
   <body>
     <!-- container section start -->
     <section id="container" class="">
     <?php
-      include('menu.html');
-      ?>
+		session_start();
+		include('./php/checkAuth.php');
+		include('menu.php');
+		verifAuth(3);
+    ?>
     <!--main content start-->
     <section id="main-content">
     <section class="wrapper">

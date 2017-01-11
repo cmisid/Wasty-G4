@@ -12,6 +12,7 @@
 			// on enregistre les paramètres de notre utilisateur comme variables de session ($user et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
     		$_SESSION['login'] = $_POST['login'];
     		$_SESSION['mdp'] = $_POST['mdp'];
+			$_SESSION['level'] = 2;
 			// on redirige notre visiteur vers une page de notre section membre
     		header ('location: index.php');
     	}
@@ -19,7 +20,7 @@
 			// Le visiteur n'a pas été reconnu comme étant membre de notre site. On utilise alors un petit javascript lui signalant ce fait
     		print('<body onLoad="alert(\'Membre non reconnu...\')">');
 			// puis on le redirige vers la page d'accueil
-    		print('<meta http-equiv="refresh" content="0;URL=id.php">');
+    		print('<meta http-equiv="refresh" content="0;URL=login.php">');
     	}
     }
     else {

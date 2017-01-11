@@ -188,61 +188,61 @@
               </header>
               <div id="chart_div" style="width: 100%; height: 500px;"></div>
               <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript" >				
+              <script type="text/javascript" >        
                 var jeutest={inscription:[
                 {
-                	"mois":"janvier",
-                	"nombre":20
+                  "mois":"janvier",
+                  "nombre":20
                 },
                 {
-                	"mois":"fevrier",
-                	"nombre":30
+                  "mois":"fevrier",
+                  "nombre":30
                 },
                 {
-                	"mois":"mars",
-                	"nombre":31
+                  "mois":"mars",
+                  "nombre":31
                 },
                 {
-                	"mois":"avril",
-                	"nombre":34
+                  "mois":"avril",
+                  "nombre":34
                 },
                 {
-                	"mois":"mai",
-                	"nombre":78
+                  "mois":"mai",
+                  "nombre":78
                 },
                 {
-                	"mois":"juin",
-                	"nombre":82
+                  "mois":"juin",
+                  "nombre":82
                 
                 },
                 {
-                	"mois":"juillet",
-                	"nombre":112
+                  "mois":"juillet",
+                  "nombre":112
                 },
                 {
-                	"mois":"aout",
-                	"nombre":130
+                  "mois":"aout",
+                  "nombre":130
                 },
                 {
-                	"mois":"septembre",
-                	"nombre":131
+                  "mois":"septembre",
+                  "nombre":131
                 },
                 {
-                	"mois":"octobre",
-                	"nombre":131
+                  "mois":"octobre",
+                  "nombre":131
                 },
                 {
-                	"mois":"novembre",
-                	"nombre":150
+                  "mois":"novembre",
+                  "nombre":150
                 },
                 {
-                	"mois":"decembre",
-                	"nombre":160
+                  "mois":"decembre",
+                  "nombre":160
                 }
                 ]}
                 var donnee = new Array()
                 donnee[0]=['mois', 'nombre']
-                for(i=1;i<=jeutest.inscription.length;i++){		
+                for(i=1;i<=jeutest.inscription.length;i++){   
                 donnee[i] = [jeutest.inscription[i-1].mois,jeutest.inscription[i-1].nombre]
                 }
                  google.charts.load('current', {'packages':['corechart']})
@@ -257,41 +257,41 @@
                 };
                 var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
                 chart.draw(data, options);
-                 }		
+                 }    
               </script>
               <div id="piechart" style="width: 100%; height: 500px;"></div>
               <script type="text/javascript">
                 var jeutest={objet:[
-                	{
-                		"id_objet":1,
-                		"categorie":"chaise",
-                		"nombre":20
-                	},
-                	{
-                		"id_objet":2,
-                		"categorie":"table",
-                		"nombre":80
-                	},
-                	{
-                		"id_objet":3,
-                		"categorie":"ordinateur",
-                		"nombre":2
-                	}
+                  {
+                    "id_objet":1,
+                    "categorie":"chaise",
+                    "nombre":20
+                  },
+                  {
+                    "id_objet":2,
+                    "categorie":"table",
+                    "nombre":80
+                  },
+                  {
+                    "id_objet":3,
+                    "categorie":"ordinateur",
+                    "nombre":2
+                  }
                 ]}
                 var donnee1 = new Array()
                 donnee1[0]=['categorie', 'nombre']
-                for(i=1;i<=jeutest.objet.length;i++){		
-                	donnee1[i] = [jeutest.objet[i-1].categorie,jeutest.objet[i-1].nombre]
+                for(i=1;i<=jeutest.objet.length;i++){   
+                  donnee1[i] = [jeutest.objet[i-1].categorie,jeutest.objet[i-1].nombre]
                 }
                   google.charts.load('current', {'packages':['corechart']})
                   google.charts.setOnLoadCallback(drawChart)
                   function drawChart() {
-                	var data = google.visualization.arrayToDataTable(donnee1)
-                	var options = {
-                	  title: 'Effectifs des objets'
-                	}
-                	var chart = new google.visualization.PieChart(document.getElementById('piechart'))
-                	chart.draw(data, options)
+                  var data = google.visualization.arrayToDataTable(donnee1)
+                  var options = {
+                    title: 'Effectifs des objets'
+                  }
+                  var chart = new google.visualization.PieChart(document.getElementById('piechart'))
+                  chart.draw(data, options)
                   }
               </script>
               <div id="curve_chart" style="width: 100%; height: 500px;"></div>
@@ -299,68 +299,68 @@
                 google.charts.load("current", {packages:["corechart"]})
                 google.charts.setOnLoadCallback(drawChart)
                 var jeutest={objet:[
-                					{
-                						"sexe":"homme",
-                						"mois":"janvier",
-                						"nombre":20
-                					},
-                					{
-                						"sexe":"homme",
-                						"mois":"fevrier",
-                						"nombre":30,
-                					},
-                					{
-                						"sexe":"homme",									
-                						"mois":"mars",
-                						"nombre":31,
-                					},
-                					{
-                						"sexe":"homme",
-                						"mois":"avril",
-                						"nombre":34
-                					},
-                					{
-                						"sexe":"homme",
-                						"mois":"mai",
-                						"nombre":78,
-                					},
-                					{
-                						"sexe":"homme",
-                						"mois":"juin",
-                						"nombre":82,
+                          {
+                            "sexe":"homme",
+                            "mois":"janvier",
+                            "nombre":20
+                          },
+                          {
+                            "sexe":"homme",
+                            "mois":"fevrier",
+                            "nombre":30,
+                          },
+                          {
+                            "sexe":"homme",                 
+                            "mois":"mars",
+                            "nombre":31,
+                          },
+                          {
+                            "sexe":"homme",
+                            "mois":"avril",
+                            "nombre":34
+                          },
+                          {
+                            "sexe":"homme",
+                            "mois":"mai",
+                            "nombre":78,
+                          },
+                          {
+                            "sexe":"homme",
+                            "mois":"juin",
+                            "nombre":82,
                 
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"janvier",
-                						"nombre":30
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"fevrier",
-                						"nombre":40,
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"mars",
-                						"nombre":41,
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"avril",
-                						"nombre":44
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"mai",
-                						"nombre":58,
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"juin",
-                						"nombre":72,
+                          },
+                          {
+                            "sexe":"femme",
+                            "mois":"janvier",
+                            "nombre":30
+                          },
+                          {
+                            "sexe":"femme",
+                            "mois":"fevrier",
+                            "nombre":40,
+                          },
+                          {
+                            "sexe":"femme",
+                            "mois":"mars",
+                            "nombre":41,
+                          },
+                          {
+                            "sexe":"femme",
+                            "mois":"avril",
+                            "nombre":44
+                          },
+                          {
+                            "sexe":"femme",
+                            "mois":"mai",
+                            "nombre":58,
+                          },
+                          {
+                            "sexe":"femme",
+                            "mois":"juin",
+                            "nombre":72,
                 
-                					}
+                          }
                 ]}
                 var donnee2 = new Array()
                 donnee2[0] = ['sexe']
@@ -371,31 +371,31 @@
                 
                 mois_existante=false
                 for(k = 1; k < j; k++){
-                	if(donnee2[k][0] == jeutest.objet[i-1].mois){
-                		mois_existante=true
-                		donnee2[k][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre
-                	}
+                  if(donnee2[k][0] == jeutest.objet[i-1].mois){
+                    mois_existante=true
+                    donnee2[k][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre
+                  }
                 }
                 if(!mois_existante){
-                	donnee2[j] = new Array()
-                	donnee2[j].unshift(jeutest.objet[i-1].mois)
-                	donnee2[j][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre	
-                	j++
+                  donnee2[j] = new Array()
+                  donnee2[j].unshift(jeutest.objet[i-1].mois)
+                  donnee2[j][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre 
+                  j++
                 }
                 }
                 else{
                 mois_existante=false
                 for(k = 1; k < j; k++){
-                	if(donnee2[k][0] == jeutest.objet[i-1].mois){
-                		mois_existante=true
-                		donnee2[k][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre
-                	}
+                  if(donnee2[k][0] == jeutest.objet[i-1].mois){
+                    mois_existante=true
+                    donnee2[k][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre
+                  }
                 }
                 if(!mois_existante){
-                	donnee2[j] = new Array()
-                	donnee2[j].unshift(jeutest.objet[i-1].mois)
-                	donnee2[j][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre	
-                	j++
+                  donnee2[j] = new Array()
+                  donnee2[j].unshift(jeutest.objet[i-1].mois)
+                  donnee2[j][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre 
+                  j++
                 }
                 }
                 }
@@ -414,96 +414,96 @@
               <div id="columnChart" style="width: 100%; height: 500px;"></div>
               <script type="text/javascript">
                 var jeutest={user:[
-                	{
-                		"age":18,
-                		"nombre":20
-                	},
-                	{
-                		"age":19,
-                		"nombre":26
-                	},
-                	{
-                		"age":20,
-                		"nombre":20
-                	},
-                	{
-                		"age":21,
-                		"nombre":12
-                	},
-                	{
-                		"age":22,
-                		"nombre":29
-                	},
-                	{
-                		"age":23,
-                		"nombre":8
-                	},
-                	{
-                		"age":24,
-                		"nombre":42
-                	},
-                	{
-                		"age":25,
-                		"nombre":39
-                	},
-                	{
-                		"age":26,
-                		"nombre":38
-                	},
-                	{
-                		"age":27,
-                		"nombre":18
-                	},
-                	{
-                		"age":28,
-                		"nombre":19
-                	},
-                	{
-                		"age":29,
-                		"nombre":23
-                	}
+                  {
+                    "age":18,
+                    "nombre":20
+                  },
+                  {
+                    "age":19,
+                    "nombre":26
+                  },
+                  {
+                    "age":20,
+                    "nombre":20
+                  },
+                  {
+                    "age":21,
+                    "nombre":12
+                  },
+                  {
+                    "age":22,
+                    "nombre":29
+                  },
+                  {
+                    "age":23,
+                    "nombre":8
+                  },
+                  {
+                    "age":24,
+                    "nombre":42
+                  },
+                  {
+                    "age":25,
+                    "nombre":39
+                  },
+                  {
+                    "age":26,
+                    "nombre":38
+                  },
+                  {
+                    "age":27,
+                    "nombre":18
+                  },
+                  {
+                    "age":28,
+                    "nombre":19
+                  },
+                  {
+                    "age":29,
+                    "nombre":23
+                  }
                 ]}
                 var donnee3 = new Array()
                 donnee3[0]=['age', 'nombre']
-                for(i=1;i<=jeutest.user.length;i++){		
-                	donnee3[i] = [jeutest.user[i-1].age,jeutest.user[i-1].nombre]
+                for(i=1;i<=jeutest.user.length;i++){    
+                  donnee3[i] = [jeutest.user[i-1].age,jeutest.user[i-1].nombre]
                 }
                   google.charts.load('current', {'packages':['corechart']})
                   google.charts.setOnLoadCallback(drawChart)
                   function drawChart() {
-                	var data = google.visualization.arrayToDataTable(donnee3)
-                	var options = {
-                		title: 'Repartition des utilisateurs en fonction de l age',
-                		hAxis : { ticks: [15,25,35,45,55,65]}
+                  var data = google.visualization.arrayToDataTable(donnee3)
+                  var options = {
+                    title: 'Repartition des utilisateurs en fonction de l age',
+                    hAxis : { ticks: [15,25,35,45,55,65]}
                 
-                	};
-                	var chart = new google.visualization.ColumnChart(document.getElementById('columnChart'))
-                	chart.draw(data, options)
+                  };
+                  var chart = new google.visualization.ColumnChart(document.getElementById('columnChart'))
+                  chart.draw(data, options)
                   }
-              </script>										
+              </script>                   
               <div id="mapid" style="width: 100%; height: 700px;"></div>
               <script>
                 var mymap = L.map('mapid').setView([43.5867639,1.4710835], 12);
                 //var mymap = L.map('mapid').setView([1.445654538605654, 43.600475682018], 12);
                 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
-                	maxZoom: 18,
-                	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                		'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                		'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-                	id: 'mapbox.streets'
+                  maxZoom: 18,
+                  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                  id: 'mapbox.streets'
                 }).addTo(mymap)
                 var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-                	mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw';
+                      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                      'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+                  mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw';
                 
                 var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox.light', attribution: mbAttr}),
-                	open = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{id: 'mapbox.open',   attribution: mbAttr}),
-                	streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
+                  open = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{id: 'mapbox.open',   attribution: mbAttr}),
+                  streets  = L.tileLayer(mbUrl, {id: 'mapbox.streets',   attribution: mbAttr});
                 var baseLayers = {
-                	"Grayscale": grayscale,
-                	"Open street": open,
-                	"Streets": streets
+                  "Grayscale": grayscale,
+                  "Open street": open,
+                  "Streets": streets
                 };
                 //quartier={ "type": "Feature", "properties": { "nom": "CAPITOLE" }, "geometry":{"type": "Polygon", "coordinates": [[[1.445654538605654, 43.600475682018], [1.44508596589854, 43.60045228340159], [1.444703670765758, 43.60042088592535], [1.443784005115295, 43.600369172451614], [1.442582383696922, 43.6001061281919], [1.442293002415302, 43.60004329105979], [1.441216647137927, 43.59976230171752], [1.440568083114643, 43.59960389908352], [1.437807836718713, 43.59910139126145], [1.437376975014189, 43.5999627271494], [1.436758945880903, 43.600370330130374], [1.436584167819144, 43.60030555110646], [1.436085706153033, 43.60064030078263], [1.435206496691976, 43.60101364952845], [1.434133467081927, 43.60128894247944], [1.435494490185119, 43.60315419892098], [1.435864326155098, 43.60366710422023], [1.436194315802769, 43.60388733772108], [1.436375754397747, 43.603942711983905], [1.438070179715442, 43.60433840383075], [1.438810521423038, 43.604457814166786], [1.439418481135618, 43.604462632786415], [1.439921347807707, 43.604529056940756], [1.440529665675806, 43.60459631658261], [1.441122031993357, 43.604686156161236], [1.441408057810336, 43.60471396507878], [1.441746277706264, 43.60473366415866], [1.442726690358831, 43.604819940156936], [1.442826804378204, 43.60482924574712], [1.443707729206854, 43.60495162317201], [1.44453752553604, 43.604923153694614], [1.445678652758383, 43.60488388275945], [1.4456709384186, 43.60426599999969], [1.445679050533501, 43.60372204374527], [1.445678739597694, 43.60348077557395], [1.44566959853868, 43.603133478818755], [1.44566764691986, 43.60300289201835], [1.445637228598714, 43.60251067088358], [1.445645356007181, 43.601441606648166], [1.445654538605654, 43.600475682018]]]}}
                 quartier={"type": "FeatureCollection","crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },"features": [
@@ -569,79 +569,79 @@
                 { "type": "Feature", "properties": { "nom": "SEPT DENIERS","nbr_user":464 }, "geometry":{"type": "Polygon", "coordinates": [[[1.402200873851672, 43.62462651689179], [1.40301590072666, 43.62456227996811], [1.403705645514369, 43.62451403086468], [1.404172190386607, 43.6244128543339], [1.405819339463779, 43.62485783331811], [1.409734835061773, 43.625925011579106], [1.410034775681962, 43.62531342601235], [1.410169535519465, 43.625273842268165], [1.410551864526626, 43.6252277709851], [1.411063952160885, 43.62512882314256], [1.411217602206196, 43.62513197434414], [1.412721254850031, 43.62509031790693], [1.41340987891311, 43.62502970542827], [1.415678400904494, 43.62454482376046], [1.417880175719769, 43.624077341424204], [1.419301837565007, 43.62377569182267], [1.419730510780659, 43.623678875097696], [1.419101429154006, 43.61884661271903], [1.418858703800499, 43.61845484555139], [1.41876792840295, 43.61783723275365], [1.418396756052742, 43.61546605185142], [1.418295939537595, 43.614823758084384], [1.418157467335288, 43.614258741516316], [1.417960839971562, 43.61375001943025], [1.417659624175969, 43.613184627302736], [1.417296161427842, 43.61268684745453], [1.416428199158313, 43.6117185310698], [1.415848815689989, 43.611206695144254], [1.414834777253997, 43.61042545649332], [1.413709446132075, 43.60977102708249], [1.413024730534175, 43.60942105676904], [1.411107470141731, 43.60861727374427], [1.408615297839077, 43.6101258311669], [1.40704520515566, 43.611532153656405], [1.405887011847067, 43.61240538603278], [1.40540212957183, 43.61293786014151], [1.404774811444343, 43.613417115269385], [1.403152792815527, 43.61513518411082], [1.402646341988376, 43.61596077034316], [1.400936666026935, 43.62052310780595], [1.400930934361902, 43.62088921582586], [1.400689461411852, 43.62167156582206], [1.40037798959438, 43.62268230056214], [1.400263270553521, 43.62277217763189], [1.401221041663502, 43.622656152748704], [1.401127843722261, 43.62469902694575], [1.402200873851672, 43.62462651689179]]]}}
                 ]}
                 /*var overlayMaps = {
-                	"Quartier": L.geoJson(quartier,{onEachFeature: onEachFeature})
+                  "Quartier": L.geoJson(quartier,{onEachFeature: onEachFeature})
                 };*/
                 //L.control.layers(baseLayers).addTo(mymap);
                 L.geoJson(quartier,{onEachFeature: onEachFeature,style : style}).addTo(mymap)
                 L.control.layers(baseLayers).addTo(mymap)
-                	function onEachFeature(feature, layer) {
-                		var popupContent="";
-                		if (feature.properties && feature.properties.nom) {
-                			popupContent=popupContent+"<b>"+feature.properties.nom+"</b><br/>";
-                		}	
-                		if (feature.properties && feature.properties.nom) {
-                			popupContent=popupContent+feature.properties.nbr_user+" utilisateurs<br/>";
-                		}								
-                		layer.bindPopup(popupContent);
-                	}
+                  function onEachFeature(feature, layer) {
+                    var popupContent="";
+                    if (feature.properties && feature.properties.nom) {
+                      popupContent=popupContent+"<b>"+feature.properties.nom+"</b><br/>";
+                    } 
+                    if (feature.properties && feature.properties.nom) {
+                      popupContent=popupContent+feature.properties.nbr_user+" utilisateurs<br/>";
+                    }               
+                    layer.bindPopup(popupContent);
+                  }
                 
                 var legend = L.control({position: 'bottomright'})
                 legend.onAdd = function (mymap) {
-                	var div = L.DomUtil.create('div', 'info legend'),
-                		grades = [0, 50, 100, 200, 400, 500],
-                		labels = [],
-                		from, to;
-                	for (var i = 0; i < grades.length; i++) {
-                		from = grades[i];
-                		to = grades[i + 1];
-                		labels.push(
-                			'<i style="background:' + getColor(from + 1) + '"></i> ' +
-                			from + (to ? '&ndash;' + to : '+'));
-                	}
-                	div.innerHTML = labels.join('<br>');
-                	return div;
+                  var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [0, 50, 100, 200, 400, 500],
+                    labels = [],
+                    from, to;
+                  for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    to = grades[i + 1];
+                    labels.push(
+                      '<i style="background:' + getColor(from + 1) + '"></i> ' +
+                      from + (to ? '&ndash;' + to : '+'));
+                  }
+                  div.innerHTML = labels.join('<br>');
+                  return div;
                 }
-                legend.addTo(mymap);						
+                legend.addTo(mymap);            
                 function getColor(d,n) {
-                	var color='';
-                	if(d > 400)
-                	{
-                		color='#800026';
-                	}
-                	else if(d > 300) 
-                	{
-                		color='#BD0026';
-                	}	
-                	else if(d >200) 
-                	{
-                		color='#E31A1C';
-                	}
-                	else if(d > 100) 
-                	{
-                		color='#FC4E2A';
-                	}	
-                	else if(d > 50) 
-                	{
-                		color='#FD8D3C';
-                	}
-                	else if(d > 0) 
-                	{
-                		color='#FEB24C';
-                	}	
-                	else
-                	{
-                		color='#FED976';
-                	}		
-                	return color;
-                }		
+                  var color='';
+                  if(d > 400)
+                  {
+                    color='#800026';
+                  }
+                  else if(d > 300) 
+                  {
+                    color='#BD0026';
+                  } 
+                  else if(d >200) 
+                  {
+                    color='#E31A1C';
+                  }
+                  else if(d > 100) 
+                  {
+                    color='#FC4E2A';
+                  } 
+                  else if(d > 50) 
+                  {
+                    color='#FD8D3C';
+                  }
+                  else if(d > 0) 
+                  {
+                    color='#FEB24C';
+                  } 
+                  else
+                  {
+                    color='#FED976';
+                  }   
+                  return color;
+                }   
                 function style(feature) {
-                	return {
-                		fillColor: getColor(feature.properties.nbr_user),
-                		weight: 1,
-                		opacity: 1,
-                		fillOpacity: 0.5,
-                		color: 'white'
-                	};
+                  return {
+                    fillColor: getColor(feature.properties.nbr_user),
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.5,
+                    color: 'white'
+                  };
                 }
               </script>
             </section>

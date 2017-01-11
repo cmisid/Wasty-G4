@@ -1,16 +1,21 @@
+<?php
+/* 
+Groupe[4] 
+Version : V2.1.2
+
+Ce fichier permet a l'administrateur de visualiser des graphiques en relation avec les utilisateur comme l'evolution des inscriptions en fonction des mois
+
+Changements: mettre le traitement d'affichage des graphiques dans des fonctions.
+
+*/
+ ?>
 <!DOCTYPE html>
 <html lang="en">
-  <?php
-    include('./php/checkAuth.php');
-    ?>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
-    <meta name="author" content="GeeksLabs">
-    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>Form Component | Creative - Bootstrap 3 Responsive Admin Template</title>
+    <title>Statistique utilisateurs</title>
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
@@ -78,29 +83,17 @@
       });
       
     </script>
-    <style>
-      body{
-      padding:20px 20px;
-      }
-      .results tr[visible='false'],
-      .no-result{
-      display:none;
-      }
-      .results tr[visible='true']{
-      display:table-row;
-      }
-      .counter{
-      padding:8px; 
-      color:#ccc;
-      }
-    </style>
+   
   </head>
   <body>
     <!-- container section start -->
     <section id="container" class="">
     <?php
-      include('menu.html');
-      ?>
+		session_start();
+		include('./php/checkAuth.php');
+		include('menu.php');
+		verifAuth(1);
+    ?>
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
@@ -120,61 +113,61 @@
               </header>
               <div id="chart_div" style="width: 100%; height: 500px;"></div>
               <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript" >				
+              <script type="text/javascript" >              
                 var jeutest={inscription:[
                 {
-                	"mois":"janvier",
-                	"nombre":20
+                    "mois":"janvier",
+                    "nombre":20
                 },
                 {
-                	"mois":"fevrier",
-                	"nombre":30
+                    "mois":"fevrier",
+                    "nombre":30
                 },
                 {
-                	"mois":"mars",
-                	"nombre":31
+                    "mois":"mars",
+                    "nombre":31
                 },
                 {
-                	"mois":"avril",
-                	"nombre":34
+                    "mois":"avril",
+                    "nombre":34
                 },
                 {
-                	"mois":"mai",
-                	"nombre":78
+                    "mois":"mai",
+                    "nombre":78
                 },
                 {
-                	"mois":"juin",
-                	"nombre":82
+                    "mois":"juin",
+                    "nombre":82
                 
                 },
                 {
-                	"mois":"juillet",
-                	"nombre":112
+                    "mois":"juillet",
+                    "nombre":112
                 },
                 {
-                	"mois":"aout",
-                	"nombre":130
+                    "mois":"aout",
+                    "nombre":130
                 },
                 {
-                	"mois":"septembre",
-                	"nombre":131
+                    "mois":"septembre",
+                    "nombre":131
                 },
                 {
-                	"mois":"octobre",
-                	"nombre":131
+                    "mois":"octobre",
+                    "nombre":131
                 },
                 {
-                	"mois":"novembre",
-                	"nombre":150
+                    "mois":"novembre",
+                    "nombre":150
                 },
                 {
-                	"mois":"decembre",
-                	"nombre":160
+                    "mois":"decembre",
+                    "nombre":160
                 }
                 ]}
                 var donnee = new Array()
                 donnee[0]=['mois', 'nombre']
-                for(i=1;i<=jeutest.inscription.length;i++){		
+                for(i=1;i<=jeutest.inscription.length;i++){     
                 donnee[i] = [jeutest.inscription[i-1].mois,jeutest.inscription[i-1].nombre]
                 }
                  google.charts.load('current', {'packages':['corechart']})
@@ -189,75 +182,75 @@
                 };
                 var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
                 chart.draw(data, options);
-                 }		
+                 }      
               </script>
               <div id="curve_chart" style="width: 100%; height: 500px;"></div>
               <script type="text/javascript">
                 google.charts.load("current", {packages:["corechart"]})
                 google.charts.setOnLoadCallback(drawChart)
                 var jeutest={objet:[
-                					{
-                						"sexe":"homme",
-                						"mois":"janvier",
-                						"nombre":20
-                					},
-                					{
-                						"sexe":"homme",
-                						"mois":"fevrier",
-                						"nombre":30,
-                					},
-                					{
-                						"sexe":"homme",									
-                						"mois":"mars",
-                						"nombre":31,
-                					},
-                					{
-                						"sexe":"homme",
-                						"mois":"avril",
-                						"nombre":34
-                					},
-                					{
-                						"sexe":"homme",
-                						"mois":"mai",
-                						"nombre":78,
-                					},
-                					{
-                						"sexe":"homme",
-                						"mois":"juin",
-                						"nombre":82,
+                                    {
+                                        "sexe":"homme",
+                                        "mois":"janvier",
+                                        "nombre":20
+                                    },
+                                    {
+                                        "sexe":"homme",
+                                        "mois":"fevrier",
+                                        "nombre":30,
+                                    },
+                                    {
+                                        "sexe":"homme",                                 
+                                        "mois":"mars",
+                                        "nombre":31,
+                                    },
+                                    {
+                                        "sexe":"homme",
+                                        "mois":"avril",
+                                        "nombre":34
+                                    },
+                                    {
+                                        "sexe":"homme",
+                                        "mois":"mai",
+                                        "nombre":78,
+                                    },
+                                    {
+                                        "sexe":"homme",
+                                        "mois":"juin",
+                                        "nombre":82,
                 
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"janvier",
-                						"nombre":30
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"fevrier",
-                						"nombre":40,
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"mars",
-                						"nombre":41,
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"avril",
-                						"nombre":44
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"mai",
-                						"nombre":58,
-                					},
-                					{
-                						"sexe":"femme",
-                						"mois":"juin",
-                						"nombre":72,
+                                    },
+                                    {
+                                        "sexe":"femme",
+                                        "mois":"janvier",
+                                        "nombre":30
+                                    },
+                                    {
+                                        "sexe":"femme",
+                                        "mois":"fevrier",
+                                        "nombre":40,
+                                    },
+                                    {
+                                        "sexe":"femme",
+                                        "mois":"mars",
+                                        "nombre":41,
+                                    },
+                                    {
+                                        "sexe":"femme",
+                                        "mois":"avril",
+                                        "nombre":44
+                                    },
+                                    {
+                                        "sexe":"femme",
+                                        "mois":"mai",
+                                        "nombre":58,
+                                    },
+                                    {
+                                        "sexe":"femme",
+                                        "mois":"juin",
+                                        "nombre":72,
                 
-                					}
+                                    }
                 ]}
                 var donnee2 = new Array()
                 donnee2[0] = ['sexe']
@@ -268,31 +261,31 @@
                 
                 mois_existante=false
                 for(k = 1; k < j; k++){
-                	if(donnee2[k][0] == jeutest.objet[i-1].mois){
-                		mois_existante=true
-                		donnee2[k][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre
-                	}
+                    if(donnee2[k][0] == jeutest.objet[i-1].mois){
+                        mois_existante=true
+                        donnee2[k][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre
+                    }
                 }
                 if(!mois_existante){
-                	donnee2[j] = new Array()
-                	donnee2[j].unshift(jeutest.objet[i-1].mois)
-                	donnee2[j][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre	
-                	j++
+                    donnee2[j] = new Array()
+                    donnee2[j].unshift(jeutest.objet[i-1].mois)
+                    donnee2[j][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre 
+                    j++
                 }
                 }
                 else{
                 mois_existante=false
                 for(k = 1; k < j; k++){
-                	if(donnee2[k][0] == jeutest.objet[i-1].mois){
-                		mois_existante=true
-                		donnee2[k][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre
-                	}
+                    if(donnee2[k][0] == jeutest.objet[i-1].mois){
+                        mois_existante=true
+                        donnee2[k][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre
+                    }
                 }
                 if(!mois_existante){
-                	donnee2[j] = new Array()
-                	donnee2[j].unshift(jeutest.objet[i-1].mois)
-                	donnee2[j][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre	
-                	j++
+                    donnee2[j] = new Array()
+                    donnee2[j].unshift(jeutest.objet[i-1].mois)
+                    donnee2[j][donnee2[0].indexOf(jeutest.objet[i-1].sexe)] = jeutest.objet[i-1].nombre 
+                    j++
                 }
                 }
                 }
@@ -311,71 +304,71 @@
               <div id="columnChart" style="width: 100%; height: 500px;"></div>
               <script type="text/javascript">
                 var jeutest={user:[
-                	{
-                		"age":18,
-                		"nombre":20
-                	},
-                	{
-                		"age":19,
-                		"nombre":26
-                	},
-                	{
-                		"age":20,
-                		"nombre":20
-                	},
-                	{
-                		"age":21,
-                		"nombre":12
-                	},
-                	{
-                		"age":22,
-                		"nombre":29
-                	},
-                	{
-                		"age":23,
-                		"nombre":8
-                	},
-                	{
-                		"age":24,
-                		"nombre":42
-                	},
-                	{
-                		"age":25,
-                		"nombre":39
-                	},
-                	{
-                		"age":26,
-                		"nombre":38
-                	},
-                	{
-                		"age":27,
-                		"nombre":18
-                	},
-                	{
-                		"age":28,
-                		"nombre":19
-                	},
-                	{
-                		"age":29,
-                		"nombre":23
-                	}
+                    {
+                        "age":18,
+                        "nombre":20
+                    },
+                    {
+                        "age":19,
+                        "nombre":26
+                    },
+                    {
+                        "age":20,
+                        "nombre":20
+                    },
+                    {
+                        "age":21,
+                        "nombre":12
+                    },
+                    {
+                        "age":22,
+                        "nombre":29
+                    },
+                    {
+                        "age":23,
+                        "nombre":8
+                    },
+                    {
+                        "age":24,
+                        "nombre":42
+                    },
+                    {
+                        "age":25,
+                        "nombre":39
+                    },
+                    {
+                        "age":26,
+                        "nombre":38
+                    },
+                    {
+                        "age":27,
+                        "nombre":18
+                    },
+                    {
+                        "age":28,
+                        "nombre":19
+                    },
+                    {
+                        "age":29,
+                        "nombre":23
+                    }
                 ]}
                 var donnee3 = new Array()
                 donnee3[0]=['age', 'nombre']
-                for(i=1;i<=jeutest.user.length;i++){		
-                	donnee3[i] = [jeutest.user[i-1].age,jeutest.user[i-1].nombre]
+                for(i=1;i<=jeutest.user.length;i++){        
+                    donnee3[i] = [jeutest.user[i-1].age,jeutest.user[i-1].nombre]
                 }
                   google.charts.load('current', {'packages':['corechart']})
                   google.charts.setOnLoadCallback(drawChart)
                   function drawChart() {
-                	var data = google.visualization.arrayToDataTable(donnee3)
-                	var options = {
-                		title: 'Repartition des utilisateurs en fonction de l age',
-                		hAxis : { ticks: [15,25,35,45,55,65]}
+                    var data = google.visualization.arrayToDataTable(donnee3)
+                    var options = {
+                        title: 'Repartition des utilisateurs en fonction de l age',
+                        hAxis : { ticks: [15,25,35,45,55,65]}
                 
-                	};
-                	var chart = new google.visualization.ColumnChart(document.getElementById('columnChart'))
-                	chart.draw(data, options)
+                    };
+                    var chart = new google.visualization.ColumnChart(document.getElementById('columnChart'))
+                    chart.draw(data, options)
                   }
               </script>
             </section>

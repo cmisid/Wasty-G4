@@ -1,5 +1,18 @@
 <?php
+/* 
+Groupe[4] 
+Version : V2.1.2
+
+Ce fichier permet de récuperer les valeurs saisies dans le formulaire utilisateur (ajout) et de les formater dans un fichier json.
+
+Changements : nommage des variables en anglais.
+
+*/
+
+	/* Configuration du type "date" */ 
 	date_default_timezone_set('Europe/Paris');
+	
+	/* Recuperation des données saisies par l'administrateur dans la page ajout_user.php */
 	$last_name = $_POST['last_name'];
 	$first_name = $_POST['first_name'];
 	$email = $_POST['email'];
@@ -14,7 +27,8 @@
 	$car_size = $_POST['car_size'];
 	$date_joined = date("Y-m-d H:i:s");
 	
-	$donnees = '[
+	/* Creation du fichier json à partir des données recuperées */ 
+	$data = '[
 		{
 			"password" : "'.$password.'",
 			"date_joined" : "'.$date_joined.'",
@@ -31,8 +45,10 @@
 			"car_size" : "'.$car_size.'"
 		}
 ]';
-	$handle = fopen("form_add_user.json", "w+");
-	fputs($handle,$donnees);
+
+	/* Crée(ou ecrase) et écrit le contenu de la variable data dans le fichier form_add_user.json */
+	$handle = fopen('form_add_user.json', 'w+');
+	fputs($handle,$data);
 	fclose($handle);
-	header('location: ./ajout_user.php');
+	header('location: ./user_add.php');
 ?>
