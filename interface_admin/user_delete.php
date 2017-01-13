@@ -1,15 +1,15 @@
 <?php
 /* 
 Groupe[4] 
-Version : V2.1.2
+  
+Ce fichier génère un formulaire permettant de saisir les informations afin de supprimer d'un utilisateur.
 
-Ce fichier permet a l'administrateur de supprimer des utilisateurs en renseignant des informations dans le formulaire .
-le traitement de suppression dans la bdd n'est pas encore fait ,les données saisies dans le formulaire sont récuperés dans un fichiers php ! 
-
-Changements: correction des formulaires.
+Version (V1.0.0): Ajout des zones de saisies afin de supprimer un utilisateur.
+Version (V1.1.0): Ajout d'une fonctionnalité permettant de gérer le niveau de permission des utilisateurs
+Version (V2.0.0): Mise en forme du fichier afin de respecter la norme de codage définit dans la charte.
 
 */
-?>
+  ?>
 <!DOCTYPE html>
 <html lang = "en">
   <head>
@@ -40,22 +40,14 @@ Changements: correction des formulaires.
     <!-- container section start -->
     <section id = "container" class = "">
     <?php
-		include('./php/checkAuth.php');
-		include('menu.php');
-		verifAuth(4);
-    ?>
+	  session_start();
+      include('./php/checkAuth.php');
+      include('menu.php');
+      verifAuth(4);
+        ?>
     <!--main content start-->
     <section id = "main-content">
     <section class = "wrapper">
-      <div class = "row">
-        <div class = "col-lg-12">
-		  <!-- Titre de la section -->
-          <h3 class = "page-header"><i class = "fa fa-file-text-o"></i> Suppression utilisateurs </h3>
-          <ol class = "breadcrumb">
-            <li><i class = "fa fa-home"></i><a href = "index.php"> Home </a></li>
-          </ol>
-        </div>
-      </div>
       <div class = "row">
       <div class = "col-lg-12">
       <section class = "panel">
@@ -63,7 +55,7 @@ Changements: correction des formulaires.
           Suppression utilisateur
         </header>
         <div class = "panel-body">
-		  <!-- Zone de texte permettant de saisir l'adresse mail de l'utilisateur -->
+          <!-- Zone de texte permettant de saisir l'adresse mail de l'utilisateur -->
           <form class = "form-horizontal " method = "post"  action = "form_delete_user.php">
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Adresse Email </label>
@@ -71,17 +63,10 @@ Changements: correction des formulaires.
                 <input type = "email" class = "form-control" name = "email" required>
               </div>
             </div>
-            <!-- <div class = "form-group">
-              <label class = "col-sm-2 control-label">Utilisateurs</label>
+            <!-- Bouton permettant de valider le formulaire et de rediriger vers la page de création du fichier json -->
+            <div class = "form-group">
               <div class = "col-sm-10">
-               <select name = "email" class = "form" id = "email"></select>
-              </div>
-              </div> -->
-			
-			<!-- Bouton permettant de valider le formulaire et de rediriger vers la page de création du fichier json -->
-            <div class = "form-group" align = "center">
-              <div class = "col-sm-10">
-                <input type = "submit" name = "button" value = "delete"></input>&nbsp
+                <input type = "submit" name = "button" class="btn btn-primary" value = "Supprimer"></input>&nbsp
               </div>
             </div>
           </form>

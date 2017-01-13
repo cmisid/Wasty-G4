@@ -1,11 +1,12 @@
 <?php
 /* 
 Groupe[4] 
-Version : V2.1.2
 
 Ce fichier permet de récuperer les valeurs saisies dans le formulaire utilisateur (suppression) et de les formater dans un fichier json.
 
-Changements : nommage des variables en anglais.
+Version (V1.0.0): Ajout des variables permettant de récuperer les données saisies dans le formulaire de suppression d'un utilisateur
+Version (V1.1.0): Ajout de la fonction "date_default_timezone_set" permettant de modifier le fuseau horaire
+Version (V2.0.0): Mise en forme du fichier afin de respecter la norme de codage définit dans la charte.
 
 */
 	/* Configuration du type "date" */ 

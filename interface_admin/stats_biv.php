@@ -1,21 +1,20 @@
 <?php
-/* 
-Groupe[4] 
-Version : V2.1.2
-
-Ce fichier permet a l'administrateur de visualiser des graphiques bivariés montrant les relations entre differentes variables.
-
-Changements: mettre le traitement d'affichage des graphiques dans des fonctions.
-
-*/
- ?>
+  /* 
+  Groupe[4] 
+  Version : V2.1.2
+  
+  Ce fichier permet a l'administrateur de visualiser des graphiques bivariés montrant les relations entre differentes variables.
+  
+  Changements: mettre le traitement d'affichage des graphiques dans des fonctions.
+  
+  */
+   ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>Statistiques bivariés</title>
+    <title>Statistiques bivariées</title>
     <!-- Bootstrap CSS -->    
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
@@ -36,223 +35,103 @@ Changements: mettre le traitement d'affichage des graphiques dans des fonctions.
     <script src="js/respond.min.js"></script>
     <script src="js/lte-ie7.js"></script>
     <![endif]-->
-    <script>
-      $(document).ready(function() {
-      $(".search").keyup(function () {
-        var searchTerm = $(".search").val();
-        var listItem = $('.results tbody').children('tr');
-        var searchSplit = searchTerm.replace(/ /g, "'):containsi('")
-        
-      $.extend($.expr[':'], {'containsi': function(elem, i, match, array){
-            return (elem.textContent || elem.innerText || '').toLowerCase().indexOf((match[3] || "").toLowerCase()) >= 0;
-        }
-      });
-        
-      $(".results tbody tr").not(":containsi('" + searchSplit + "')").each(function(e){
-        $(this).attr('visible','false');
-      });
-      
-      $(".results tbody tr:containsi('" + searchSplit + "')").each(function(e){
-        $(this).attr('visible','true');
-      });
-      
-      var jobCount = $('.results tbody tr[visible="true"]').length;
-        $('.counter').text(jobCount + ' item');
-      
-      if(jobCount == '0') {$('.no-result').show();}
-        else {$('.no-result').hide();}
-          });
-      });
-    </script>
-    <script>
-      $(document).ready(function(){
-      $("#mytable #checkall").click(function () {
-              if ($("#mytable #checkall").is(':checked')) {
-                  $("#mytable input[type=checkbox]").each(function () {
-                      $(this).prop("checked", true);
-                  });
-      
-              } else {
-                  $("#mytable input[type=checkbox]").each(function () {
-                      $(this).prop("checked", false);
-                  });
-              }
-          });
-          
-          $("[data-toggle=tooltip]").tooltip();
-      });
-      
-    </script>
-  
   </head>
   <body>
     <!-- container section start -->
     <section id="container" class="">
     <?php
-		session_start();
-		include('./php/checkAuth.php');
-		include('menu.php');
-		verifAuth(1);
-    ?>
+      session_start();
+      include('./php/checkAuth.php');
+      include('menu.php');
+      verifAuth(1);
+        ?>
     <!--main content start-->
-    <section id="main-content">
-      <section class="wrapper">
-        <div class="row">
-          <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-file-text-o"></i> Statistiques</h3>
-            <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="accueil.html">Home</a></li>
-            </ol>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <section class="panel">
-              <header class="panel-heading">
-                Général chart
-              </header>
-              <div id="chart_div" style="width: 100%; height: 500px;"></div>
-              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-              <script type="text/javascript">
-                google.charts.load("current", {packages:["corechart"]})
-                google.charts.setOnLoadCallback(drawChart)
-                // situation : à echanger, à vendre, à debarasser
-                var jeutest={objet:[
-                {
-                "categorie":"chaise",
-                "nombre":18,
-                "situation":"à échanger"
-                },
-                {
-                "categorie":"chaise",
-                "nombre":15,
-                "situation":"à vendre"
-                },
-                {
-                "categorie":"chaise",
-                "nombre":8,
-                "situation":"à débarasser"
-                },    
-                {
-                "categorie":"table",
-                "nombre":8,
-                "situation":"à échanger"
-                },  
-                {
-                "categorie":"table",
-                "nombre":12,
-                "situation":"à vendre"
-                },
-                {
-                "categorie":"table",
-                "nombre":3,
-                "situation":"à débarasser"
-                },
-                {
-                "categorie":"ordinateur",
-                "nombre":6,
-                "situation":"à échanger"
-                },    
-                
-                {
-                "categorie":"ordinateur",
-                "nombre":16,
-                "situation":"à vendre"
-                },
-                {
-                "categorie":"ordinateur",
-                "nombre":1,
-                "situation":"à débarasser"
-                }
-                ]}
-                var donnee = new Array()
-                donnee[0] = ['categorie']
-                /*for(i = 1; i <= jeutest.objet.length; i++){   
-                donnee[i] = [jeutest.objet[i-1].situation,jeutest.objet[i-1].nombre]
-                } */
-                j=1
-                for(i=1;i<=jeutest.objet.length;i++){
-                if(donnee[0].indexOf(jeutest.objet[i-1].categorie)==-1){
-                donnee[0].push(jeutest.objet[i-1].categorie)
-                
-                situation_existante=false
-                for(k = 1; k < j; k++){
-                if(donnee[k][0] == jeutest.objet[i-1].situation){
-                situation_existante=true
-                donnee[k][donnee[0].indexOf(jeutest.objet[i-1].categorie)] = jeutest.objet[i-1].nombre
-                }
-                }
-                if(!situation_existante){
-                donnee[j] = new Array()
-                donnee[j].unshift(jeutest.objet[i-1].situation)
-                donnee[j][donnee[0].indexOf(jeutest.objet[i-1].categorie)] = jeutest.objet[i-1].nombre  
-                j++
-                
-                }
-                }
-                else{
-                situation_existante=false
-                for(k = 1; k < j; k++){
-                if(donnee[k][0] == jeutest.objet[i-1].situation){
-                situation_existante=true
-                donnee[k][donnee[0].indexOf(jeutest.objet[i-1].categorie)] = jeutest.objet[i-1].nombre
-                }
-                }
-                if(!situation_existante){
-                donnee[j] = new Array()
-                donnee[j].unshift(jeutest.objet[i-1].situation)
-                donnee[j][donnee[0].indexOf(jeutest.objet[i-1].categorie)] = jeutest.objet[i-1].nombre  
-                j++
-                }
-                }
-                }
-                
-                
-                function drawChart() {
-                var data = google.visualization.arrayToDataTable(donnee);
-                var options = {
-                  width: 600,
-                  height: 400,
-                  legend: { position: 'top', maxLines: 3 },
-                  bar: { groupWidth: '75%' },
-                  isStacked: true,
-                };
-                
-                var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-                chart.draw(data, options);
-                }
-              </script>
-            </section>
-          </div>
-        </div>
-      </section>
-      <!--main content end-->
-    </section>
-    <!-- container section end -->
-    <!-- javascripts -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- nice scroll -->
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-    <!-- jquery ui -->
-    <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
-    <!--custom checkbox & radio-->
-    <script type="text/javascript" src="js/ga.js"></script>
-    <!--custom switch-->
-    <script src="js/bootstrap-switch.js"></script>
-    <!--custom tagsinput-->
-    <script src="js/jquery.tagsinput.js"></script>
-    <!-- colorpicker -->
-    <!-- bootstrap-wysiwyg -->
-    <script src="js/jquery.hotkeys.js"></script>
-    <script src="js/bootstrap-wysiwyg.js"></script>
-    <script src="js/bootstrap-wysiwyg-custom.js"></script>
-    <!-- ck editor -->
-    <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
-    <!-- custom form component script for this page-->
-    <script src="js/form-component.js"></script>
-    <!-- custome script for all page -->
-    <script src="js/scripts.js"></script>
-  </body>
+		<section id="main-content">
+			<script src="./js/jquery.js"></script>
+			<script type="text/javascript" src="./chart/chart.js"></script>
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+			<script type="text/javascript">
+			$.getJSON('./data/Biv/cat_situation.json',function(data){
+				ColumnChart2(data,'','columnchart_div_1','percent')
+			})
+			$.getJSON('./data/Biv/cat_csp_(annonce).json',function(data){
+				ColumnChart2(data,'Categorie de l\'objet en fonction de la CSP de l\'annonceur','columnchart_div_2','percent')
+			})	
+			$.getJSON('./data/Biv/cat_csp_(recuperation).json',function(data){
+				ColumnChart2(data,'Categorie de l\'objet en fonction de la CSP du recuperateur','columnchart_div_3','percent')
+			})		
+			$.getJSON('./data/Biv/cat_sexe_(annonce).json',function(data){
+				ColumnChart2(data,'Categorie de l\'objet en fonction du sexe de l\'annonceur','columnchart_div_4','percent')
+			})	
+			$.getJSON('./data/Biv/cat_sexe_(recuperation).json',function(data){
+				ColumnChart2(data,'Categorie de l\'objet en fonction du sexe du recuperateur','columnchart_div_5','percent')
+			})			
+			</script>
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">						
+                            <header class="panel-heading">
+                                Categorie de l'objet en fonction de sa situation
+                            </header>
+								<div id="columnchart_div_1" style="width: 100%; height: 750px;"></div>
+                        </section>
+                    </div>
+                </div>
+            </section>	
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">						
+                            <header class="panel-heading">
+                                Categorie de l'objet en fonction de la CSP
+                            </header>
+								<div id="columnchart_div_2" style="width: 100%; height: 750px;"></div>
+								<div id="columnchart_div_3" style="width: 100%; height: 750px;"></div>
+                        </section>
+                    </div>
+                </div>
+            </section>	
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">						
+                            <header class="panel-heading">
+                                Categorie de l'objet en fonction du sexe
+                            </header>
+								<div id="columnchart_div_4" style="width: 100%; height: 750px;"></div>
+								<div id="columnchart_div_5" style="width: 100%; height: 750px;"></div>
+                        </section>
+                    </div>
+                </div>
+            </section>		
+            <!--main content end-->
+        </section>
+        <!-- container section end -->
+        <!-- javascripts -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- nice scroll -->
+        <script src="js/jquery.scrollTo.min.js"></script>
+        <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+        <!-- jquery ui -->
+        <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+        <!--custom checkbox & radio-->
+        <script type="text/javascript" src="js/ga.js"></script>
+        <!--custom switch-->
+        <script src="js/bootstrap-switch.js"></script>
+        <!--custom tagsinput-->
+        <script src="js/jquery.tagsinput.js"></script>
+        <!-- colorpicker -->
+        <!-- bootstrap-wysiwyg -->
+        <script src="js/jquery.hotkeys.js"></script>
+        <script src="js/bootstrap-wysiwyg.js"></script>
+        <script src="js/bootstrap-wysiwyg-custom.js"></script>
+        <!-- ck editor -->
+        <script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+        <!-- custom form component script for this page-->
+        <script src="js/form-component.js"></script>
+        <!-- custome script for all page -->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>

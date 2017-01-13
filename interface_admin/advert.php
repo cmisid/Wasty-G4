@@ -1,15 +1,15 @@
 <?php
-/* 
-Groupe[4] 
-Version : V2.1.2
-
-Ce fichier permet a l'administrateur de visualiser la liste des annonces, faire des recherches et supprimer des annonces .
-le traitement de suppression dans la bdd n'est pas encore fait ,les données saisies dans les formulaires sont récuperés dans des fichiers php ! 
-
-Changements: mise en forme de l'affichage du tableaux lien vers un fichier css externe.
-
-*/
- ?>
+  /* 
+  Groupe[4] 
+  Version : V2.1.2
+  
+  Ce fichier permet a l'administrateur de visualiser la liste des annonces, faire des Que cherchez-vous ?s et supprimer des annonces .
+  le traitement de suppression dans la bdd n'est pas encore fait ,les données saisies dans les formulaires sont récuperés dans des fichiers php ! 
+  
+  Changements: mise en forme de l'affichage du tableaux lien vers un fichier css externe.
+  
+  */
+   ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,7 +24,6 @@ Changements: mise en forme de l'affichage du tableaux lien vers un fichier css e
     <!-- font icon -->
     <link href="css/elegant-icons-style.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
-    
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
@@ -79,29 +78,20 @@ Changements: mise en forme de l'affichage du tableaux lien vers un fichier css e
           
           $("[data-toggle=tooltip]").tooltip();
       });
-      
-    </script>
+	</script>
   </head>
   <body>
     <!-- container section start -->
     <section id="container" class="">
     <?php
-		session_start();
-		include('./php/checkAuth.php');
-		include('menu.php');
-		verifAuth(3);
-    ?>
+      session_start();
+      include('./php/checkAuth.php');
+      include('menu.php');
+      verifAuth(3);
+        ?>
     <!--main content start-->
     <section id="main-content">
     <section class="wrapper">
-      <div class="row">
-        <div class="col-lg-12">
-          <h3 class="page-header"><i class="fa fa-file-text-o"></i> Annonces</h3>
-          <ol class="breadcrumb">
-            <li><i class="fa fa-home"></i><a href="accueil.html">Home</a></li>
-          </ol>
-        </div>
-      </div>
       <div class="row">
       <div class="col-lg-12">
       <div class="row">
@@ -112,86 +102,64 @@ Changements: mise en forme de l'affichage du tableaux lien vers un fichier css e
             </header>
             <div class="panel-body">
               <div class="form-group pull-right">
-                <input type="text" class="search form-control" placeholder="Que cherchez vous?">
+                <input type="text" class="search form-control" placeholder="Que cherchez-vous ?">
               </div>
               <span class="counter pull-right"></span>
-              <table class="table table-hover table-bordered results">
-                <thead>
+							<table class="table table-hover table-bordered results">
+							  <thead>
                   <tr>
                     <th>#</th>
                     <th class="col-md-5 col-xs-5">Date</th>
                     <th >Utilisateur</th>
-                    <th>titre</th>
-                    <th>Sous Catégorie</th>
+                    <th>Titre</th>
+                    <th>Sous-catégorie</th>
                     <th>Supprimer</th>
                   </tr>
                   <tr class="warning no-result">
                     <td colspan="4"><i class="fa fa-warning"></i> Aucun résultat</td>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>12/01/2016</td>
-                    <td>Utilisateur 1</td>
-                    <td>Annonce 1</td>
-                    <td>Vere</td>
-                    <td>
-                      <p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>22/05/2016</td>
-                    <td>Utilisateur 2</td>
-                    <td>Annonce 2</td>
-                    <td>Métal</td>
-                    <td>
-                      <p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>02/12/2016</td>
-                    <td>Utilisateur 3</td>
-                    <td>Annonce 3</td>
-                    <td>Vere</td>
-                    <td>
-                      <p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>30/10/2016</td>
-                    <td>Utilisateur 4</td>
-                    <td>Annonce 4</td>
-                    <td>Métal</td>
-                    <td>
-                      <p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+								<tbody>
+							<?php
+							/* affichage de la liste des annonces */
+							//recuperation du fichier JSON
+							$string = file_get_contents("data/Advert_delete/advert.json");
+							// transformation du fichier JSON en variable interpretable par PHP
+							$json = json_decode($string, true);
+							
+							// traitement pour les valeurs du fichier JSON
+							foreach($json as $key => $value) {
+								echo '<tr>';
+								echo '</br>';
+								foreach($value as $key => $val) {
+									echo '<td>'.$val.'</td>';
+								}
+								echo '<td>';
+								echo '<p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Supprimer" data-toggle="modal" data-target="#delete" ><i class="icon_close"></i></button></p>';
+								echo '</td>';
+								echo '</tr>';
+							}
+							?>
+							</table>
+							              <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon_close"></i></button>
                       <h4 class="modal-title custom_align" id="Heading">Supprimer</h4>
                     </div>
                     <div class="modal-body">
-                      <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Voulez vous vraiment supprimer l'enregistrement?</div>
+                      <div class="alert alert-danger">Voulez vous vraiment supprimer l'enregistrement?</div>
                     </div>
                     <div class="modal-footer ">
-                      <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Oui</button>
-                      <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Non</button>
+                      <button type="button" class="btn btn-success" >Oui</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
                     </div>
                   </div>
                   <!-- /.modal-content --> 
                 </div>
                 <!-- /.modal-dialog --> 
-              </div>
-            </div>
+           </div>
           </section>
         </div>
       </div>

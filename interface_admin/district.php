@@ -1,15 +1,15 @@
 <?php
-/* 
-Groupe[4] 
-Version : V2.1.2
-
-Ce fichier permet a l'administrateur de visualiser la liste des quartiers , faire des recherches ,d'ajouter,modifier ou supprimer des quartiers .
-le traitement d'ajout,modification et suppression dans la bdd n'est pas encore fait ,les données saisies dans les formulaires sont récuperés dans des fichiers php ! 
-
-Changements: Ajout de controles dans les formulaires, lien vers un fichier css externe pour le formatage du tableau.
-
-*/
- ?>
+  /* 
+  Groupe[4] 
+  Version : V2.1.2
+  
+  Ce fichier permet a l'administrateur de visualiser la liste des quartiers , faire des recheches ,d'ajouter,modifier ou supprimer des quartiers .
+  le traitement d'ajout,modification et suppression dans la bdd n'est pas encore fait ,les données saisies dans les formulaires sont récuperés dans des fichiers php ! 
+  
+  Changements: Ajout de controles dans les formulaires, lien vers un fichier css externe pour le formatage du tableau.
+  
+  */
+   ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -84,28 +84,19 @@ Changements: Ajout de controles dans les formulaires, lien vers un fichier css e
       });
       
     </script>
-
   </head>
   <body>
     <!-- container section start -->
-    <section id="container" class="">  
+    <section id="container" class="">
     <?php
-		session_start();
-		include('./php/checkAuth.php');
-		include('menu.php');
-		verifAuth(2);
-    ?>	
+      session_start();
+      include('./php/checkAuth.php');
+      include('menu.php');
+      verifAuth(2);
+        ?>  
     <!--main content start-->
     <section id="main-content">
     <section class="wrapper">
-      <div class="row">
-        <div class="col-lg-12">
-          <h3 class="page-header"><i class="fa fa-file-text-o"></i> quartiers</h3>
-          <ol class="breadcrumb">
-            <li><i class="fa fa-home"></i><a href="accueil.html">Home</a></li>
-          </ol>
-        </div>
-      </div>
       <div class="row">
       <div class="col-lg-12">
         <section class="panel">
@@ -122,12 +113,26 @@ Changements: Ajout de controles dans les formulaires, lien vers un fichier css e
               </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Ville</label>
-                <select name="city_name">
-                  <option> Toulouse </option>
-                  <option> Lyon </option>
-                  <option> Paris </option>
-                  <option> Montpellier </option>
-                </select>
+								<div class = "col-sm-10">
+									<select name="city_name" class="form-control" >
+									<?php
+									/* affichage de la liste des ville dans le champs de selection */
+									//recuperation du fichier JSON
+									$string = file_get_contents("data/City/city.json");
+									// transformation du fichier JSON en variable interpretable par PHP
+									$json = json_decode($string, true);
+									
+									// traitement pour les valeurs du fichier JSON
+									foreach ($json as $key => $value) {
+										foreach ($value as $key => $val) {
+											if($key == 'city'){
+												echo '<option>'.$val.'</option>';
+											}
+										}
+									}
+									?>
+									</select>
+								</div>
               </div>
               <div class="form-group">
                 <label class="col-sm-2 control-label">Densité</label>
@@ -138,156 +143,145 @@ Changements: Ajout de controles dans les formulaires, lien vers un fichier css e
               <div class="form-group">
                 <label class="col-sm-2 control-label">Polygone</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="polygon" placeholder="Saisir la densité" required>
+                  <input type="text" class="form-control" name="polygon" placeholder="Saisir le polygone" required>
                 </div>
               </div>
               <button type="submit" class="btn btn-primary">Enregistrer</button>
-          </div>
           </form>
       </div>
       </section>
-	  <?php
-			if($_SESSION['level'] > 2){
-				print('
-				  <div class="row">
-					<div class="col-lg-12">
-					  <section class="panel">
-						<header class="panel-heading">
-						  Liste des quartiers
-						</header>
-						<div class="panel-body">
-						  <div class="form-group pull-right">
-							<input type="text" class="search form-control" placeholder="What you looking for?">
-						  </div>
-						  <span class="counter pull-right"></span>
-						  <table class="table table-hover table-bordered results">
-							<thead>
-							  <tr>
-								<th>#</th>
-								<th class="col-md-5 col-xs-5">Quartier</th>
-								<th >Ville</th>
-								<th>Densité</th>
-								<th>Polygone</th>
-								<th>Edit</th>
-								<th>Delete</th>
-							  </tr>
-							  <tr class="warning no-result">
-								<td colspan="4"><i class="fa fa-warning"></i> No result</td>
-							  </tr>
-							</thead>
-							<tbody>
-							  <tr>
-								<th scope="row">1</th>
-								<td>Quartier Toulouse</td>
-								<td>Toulouse</td>
-								<td>2000000</td>
-								<td></td>
-								<td>
-								  <p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" > <span class="glyphicon glyphicon-pencil"></span></button></p>
-								</td>
-								<td>
-								  <p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p>
-								</td>
-							  </tr>
-							  <tr>
-								<th scope="row">2</th>
-								<td>Quartier Paris</td>
-								<td>Paris</td>
-								<td>5000000</td>
-								<td></td>
-								<td>
-								  <p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p>
-								</td>
-								<td>
-								  <p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p>
-								</td>
-							  </tr>
-							  <tr>
-								<th scope="row">3</th>
-								<td>Quartier Bordeaux</td>
-								<td>Bordeaux</td>
-								<td>3500000</td>
-								<td></td>
-								<td>
-								  <p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p>
-								</td>
-								<td>
-								  <p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p>
-								</td>
-							  </tr>
-							  <tr>
-								<th scope="row">4</th>
-								<td>QuartierLyon</td>
-								<td>Lyon</td>
-								<td>4000000</td>
-								<td></td>
-								<td>
-								  <p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p>
-								</td>
-								<td>
-								  <p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p>
-								</td>
-							  </tr>
-							</tbody>
-						  </table>
-						  <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-							<div class="modal-dialog">
-							  <div class="modal-content">
-								<div class="modal-header">
-								  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-								  <h4 class="modal-title custom_align" id="Heading">Modification Quartier</h4>
-								</div>
-								<div class="modal-body">
-								  <div class="form-group">
-									<label>Nom Quartier</label>
-									<input class="form-control" name="district_name" type="text" reqired>
-								  </div>
-								  <div class="form-group">
-									<label>Ville</label>
-									<input class="form-control" name="city_name" type="text" required>
-								  </div>
-								  <div class="form-group">
-									<label>Densité</label>
-									<input class="form-control" name="density" type="text" required>
-								  </div>
-								  <div class="form-group">
-									<label>Polygone</label>
-									<input class="form-control" name="polygon" type="text" required>
-								  </div>
-								</div>
-								<div class="modal-footer ">
-								  <button type="button" class="btn btn-warning btn-lg" style="width: 100%;">Modifier </button>
-								</div>
-							  </div>
-							  <!-- /.modal-content --> 
-							</div>
-							<!-- /.modal-dialog --> 
-						  </div>
-						  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-							<div class="modal-dialog">
-							  <div class="modal-content">
-								<div class="modal-header">
-								  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"></span></button>
-								  <h4 class="modal-title custom_align" id="Heading">Supprimer</h4>
-								</div>
-								<div class="modal-body">
-								  <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Voulez vous vraiment supprimer l\'enregistrement?</div>
-								</div>
-								<div class="modal-footer ">
-								  <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Oui</button>
-								  <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Non</button>
-								</div>
-							  </div>
-							  <!-- /.modal-content --> 
-							</div>
-							<!-- /.modal-dialog --> 
-						  </div>
-						</div>
-					  </section>
-					</div>
-				  </div>');
-			}	  
-	  ?>
+      <?php
+        if($_SESSION['level'] > 2){
+          print('
+            <div class="row">
+            <div class="col-lg-12">
+              <section class="panel">
+              <header class="panel-heading">
+                Liste des quartiers
+              </header>
+              <div class="panel-body">
+                <div class="form-group pull-right">
+                <input type="text" class="search form-control" placeholder="Que cherchez-vous ?">
+                </div>
+                <span class="counter pull-right"></span>
+                <table class="table table-hover table-bordered results">
+                <thead>
+                  <tr>
+										<th>#</th>
+										<th class="col-md-5 col-xs-5">Quartier</th>
+										<th >Ville</th>
+										<th>Densité</th>
+										<th>Polygone</th>
+										<th>Modifier</th>
+										<th>Supprimer</th>
+                  </tr>
+                  <tr class="warning no-result">
+										<td colspan="4"><i class="fa fa-warning"></i> Aucun résultat</td>
+                  </tr>
+                </thead>
+                <tbody>');
+								
+							/* affichage de la liste des quartiers */
+							//recuperation du fichier JSON
+							$string = file_get_contents("data/City/district.json");
+							// transformation du fichier JSON en variable interpretable par PHP
+							$json = json_decode($string, true);
+							
+							// traitement pour les valeurs du fichier JSON
+							foreach($json as $key => $value) {
+								echo '<tr>';
+								foreach($value as $key => $val) {
+									echo '<td>'.$val.'</td>';
+								}
+								echo '<td>';
+                echo '<p data-placement="top" data-toggle="tooltip"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" > <span class="glyphicon glyphicon-pencil"></span></button></p>';
+                echo '</td>';
+								echo '<td>';
+								echo '<p data-placement="top" data-toggle="tooltip"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><i class="icon_close"></i></button></p>';
+								echo '</td>';
+								echo '</tr>';
+							}
+							print('
+								</tbody>
+                </table>
+                <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+   				  <form method = "post" action = "form_district.php">
+				  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon_close"></i></button>
+                    <h4 class="modal-title custom_align" id="Heading">Modification Quartier</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">
+                    <label>Nom Quartier</label>
+                    <input class="form-control" name="district_name" type="text" reqired>
+                    </div>
+                    <div class="form-group">
+                    <label>Ville</label>
+									<div>
+                <select name="city_name" class="form-control" >');
+								/* affichage de la liste des ville dans le champs de selection */
+								//recuperation du fichier JSON
+								$string = file_get_contents("data/City/city.json");
+								// transformation du fichier JSON en variable interpretable par PHP
+								$json = json_decode($string, true);
+								
+								// traitement pour les valeurs du fichier JSON
+								foreach ($json as $key => $value) {
+									foreach ($value as $key => $val) {
+										if($key == 'city'){
+											echo '<option>'.$val.'</option>';
+										}
+									}
+								}
+								print('
+                </select>
+									</div>
+                    </div>
+                    <div class="form-group">
+                    <label>Densité</label>
+                    <input class="form-control" name="density" type="text" required>
+                    </div>
+                    <div class="form-group">
+                    <label>Polygone</label>
+                    <input class="form-control" name="polygon" type="text" required>
+                    </div>
+                  </div>
+                  <div class="modal-footer ">
+                    <button type="submit" class="btn btn-warning btn-lg" style="width: 100%;">Modifier </button>
+                  </div>
+									</form>
+                  </div>
+                  <!-- /.modal-content --> 
+                </div>
+                <!-- /.modal-dialog --> 
+                </div>
+                <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon_close"></i></button>
+                    <h4 class="modal-title custom_align" id="Heading">Supprimer</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="alert alert-danger">Voulez vous vraiment supprimer l\'enregistrement?</div>
+                  </div>
+                  <div class="modal-footer ">
+                    <button type="button" class="btn btn-success">Oui</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
+                  </div>
+                  </div>
+                  <!-- /.modal-content --> 
+                </div>
+                <!-- /.modal-dialog --> 
+                </div>
+              </div>
+              </section>
+            </div>
+          </div>');
+        }   
+        ?>
       <!--main content end-->
     </section>
     <!-- container section end -->

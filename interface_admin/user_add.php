@@ -1,15 +1,18 @@
 <?php
-/* 
+/*
+
 Groupe[4] 
-Version : V2.1.2
 
-Ce fichier permet a l'administrateur d'ajouter des utilisateurs en renseignant des informations dans le formulaire .
-le traitement d'ajout dans la bdd n'est pas encore fait ,les données saisies dans le formulaire sont récuperés dans un fichiers php ! 
+Ce fichier permet de génerer un formulaire permettant de saisir les informations à ajouter d'un utilisateur.
 
-Changements: correction des formulaires.
+Version (V1.0.0): Ajout des zones de saisies pour renseigner les informations de l'utilisateur.
+Version (V1.1.0): Suppression (mise en commentaire) du champ permettant d'associer une photo au profil d'un utilisateur.
+Version (V1.1.1): Passage en format à choix unique pour le champ permettant de selectionner le niveau de permission de l'utilisateur.
+Version (V1.2.0): Ajout d'une fonctionnalité permettant de gérer le niveau de permission des utilisateurs
+Version (V2.0.0): Mise en forme du fichier afin de respecter la norme de codage définit dans la charte.
 
 */
- ?>
+   ?>
 <!DOCTYPE html>
 <html lang = "en">
   <head>
@@ -40,70 +43,58 @@ Changements: correction des formulaires.
     <!-- container section start -->
     <section id = "container" class = "">
     <?php
-		session_start();
-		include('./php/checkAuth.php');
-		include('menu.php');
-		verifAuth(4);
-    ?>
+      session_start();
+      include('./php/checkAuth.php');
+      include('menu.php');
+      verifAuth(4);
+        ?>
     <!--main content start-->
     <section id = "main-content">
     <section class = "wrapper">
       <div class = "row">
-        <div class = "col-lg-12">
-		  <!-- Titre de la section -->
-          <h3 class = "page-header"><i class = "fa fa-file-text-o"></i> Ajout d'un utilisateur </h3>
-          <ol class = "breadcrumb">
-            <li><i class = "fa fa-home"></i><a href = "index.php"> Home </a></li>
-          </ol>
-        </div>
-      </div>
-      <div class = "row">
       <div class = "col-lg-12">
       <section class = "panel">
-        
-		<header class = "panel-heading">
-      Ajout utilisateur <?php print($_SESSION['level']); ?>
-        </header> 
+        <header class = "panel-heading">
+          Ajout utilisateur 
+        </header>
         <div class = "panel-body">
           <form class = "form-horizontal" method = "post" action = "form_add_user.php">
-		    <!-- Zone de texte permettant de saisir le nom de l'utilisateur -->
+            <!-- Zone de texte permettant de saisir le nom de l'utilisateur -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Nom </label>
               <div class = "col-sm-10">
                 <input type = "text" class = "form-control" name = "last_name" id = "last_name" required>
               </div>
             </div>
-			<!-- Zone de texte permettant de saisir le prenom de l'utilisateur -->
+            <!-- Zone de texte permettant de saisir le prenom de l'utilisateur -->
             <div class = "form-group">
-              <label class = "col-sm-2 control-label"> Prenom </label>
+              <label class = "col-sm-2 control-label"> Prénom </label>
               <div class = "col-sm-10">
                 <input type = "text" class = "form-control" name  = "first_name" id = "first_name" required>
               </div>
             </div>
-			<!-- Zone de texte permettant de saisir l'adresse email de l'utilisateur -->
+            <!-- Zone de texte permettant de saisir l'adresse email de l'utilisateur -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Adresse Email </label>
               <div class = "col-sm-10">
                 <input type = "email" class = "form-control" name = "email" id = "email" required>
               </div>
             </div>
-			<!-- Zone de texte permettant de saisir le mot de passe du compte de l'utilisateur -->
+            <!-- Zone de texte permettant de saisir le mot de passe du compte de l'utilisateur -->
             <div class = "form-group">
-              <label class = "col-sm-2 control-label"> Password </label>
+              <label class = "col-sm-2 control-label"> Mot de passe </label>
               <div class = "col-sm-10">
-                <input type = "text"  class = "form-control" name = "password" id = "password" required>
+                <input type = "password"  class = "form-control" name = "password" id = "password" required>
               </div>
             </div>
-			
-			<!-- Calendrier permettant de saisir ou de selectionner la date de naissance de l'utilisateur -->
+            <!-- Calendrier permettant de saisir ou de selectionner la date de naissance de l'utilisateur -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Date de naissance </label>
               <div class = "col-sm-10">
-                <input type = "date" name = "birthday" required>
+                <input type = "date" class = "form-control" name = "birthday" required>
               </div>
             </div>
-			
-			<!-- Zone à selection unique permettant de choisir le sexe de l'utilisateur -->
+            <!-- Zone à selection unique permettant de choisir le sexe de l'utilisateur -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Sexe </label>
               <div class = "col-sm-10">
@@ -111,15 +102,13 @@ Changements: correction des formulaires.
                 <input type = "radio" name = "gender" value = "female" required> Femme </input>
               </div>
             </div>
-			
-			<!-- Zone de texte permettant de saisir le numero de telephone de l'utilisateur -->
+            <!-- Zone de texte permettant de saisir le numero de telephone de l'utilisateur -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Téléphone </label>
               <div class = "col-sm-10">
                 <input type = "text" class = "form-control" name = "phone_number" required>
               </div>
             </div>
-			
             <!--<div class = "form-group">
               <label class = "col-sm-2 control-label">Photo</label>
               <div class = "col-sm-10">
@@ -127,33 +116,25 @@ Changements: correction des formulaires.
               
               </div>
               </div>-->
-			
-			<!-- Zone à selection unique permettant de choisir le niveau de permission de l'utilisateur -->
+            <!-- Zone à selection unique permettant de choisir le niveau de permission de l'utilisateur -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Niveau de permission </label>
               <div class = "col-sm-10">
-                <!--<input type = "checkbox" name = "niv_permission[]" id = "perm_1" value = "1"/> <label for = "perm_1">1</label>&nbsp
-                  <input type = "checkbox" name = "niv_permission[]" id = "perm_2" value = "2"/> <label for = "perm_2">2</label>&nbsp
-                  <input type = "checkbox" name = "niv_permission[]" id = "perm_3" value = "3"/> <label for = "perm_3">3</label>&nbsp
-                  <input type = "checkbox" name = "niv_permission[]" id = "perm_4" value = "4"/> <label for = "perm_4">4</label>&nbsp
-                  <input type = "checkbox" name = "niv_permission[]" id = "perm_5" value = "5"/> <label for = "perm_5">5</label>&nbsp-->
                 <input type = "radio" name = "permission" value = "1" required> 1 </input>&nbsp
                 <input type = "radio" name = "permission" value = "2" required> 2 </input>&nbsp
                 <input type = "radio" name = "permission" value = "3" required> 3 </input>&nbsp
               </div>
             </div>
-			
-			<!-- Zone à selection unique permettant de choisir la taille du véhicule (s'il en possède un) de l'utilisateur -->
+            <!-- Zone à selection unique permettant de choisir la taille du véhicule (s'il en possède un) de l'utilisateur -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Taille du véhicule </label>
               <div class = "col-sm-10">
-                <input type = "radio" name = "car_size" value = "petit"> petit </input>&nbsp
-                <input type = "radio" name = "car_size" value = "moyen"> moyen </input>&nbsp
-                <input type = "radio" name = "car_size" value = "grand"> grand </input>
+                <input type = "radio" name = "car_size" value = "petit"> Petit </input>&nbsp
+                <input type = "radio" name = "car_size" value = "moyen"> Moyen </input>&nbsp
+                <input type = "radio" name = "car_size" value = "grand"> Grand </input>
               </div>
             </div>
-			
-			<!-- Zone à selection unique permettant de choisir si l'utilisateur est superviseur ou non -->
+            <!-- Zone à selection unique permettant de choisir si l'utilisateur est superviseur ou non -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Superviseur </label>
               <div class = "col-sm-10">
@@ -161,8 +142,7 @@ Changements: correction des formulaires.
                 <input type = "radio" name = "supervisor" value = "False" checked> Non </input>
               </div>
             </div>
-			
-			<!-- Zone à selection unique permettant de choisir si l'utilisateur est un membre du staff ou non -->
+            <!-- Zone à selection unique permettant de choisir si l'utilisateur est un membre du staff ou non -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Membre du staff </label>
               <div class = "col-sm-10">
@@ -170,12 +150,11 @@ Changements: correction des formulaires.
                 <input type = "radio" name = "m_staff" value = "False" checked> Non </input>
               </div>
             </div>
-			
-			<!-- Zone à selection unique permettant de choisir la categorie socio-professionnel de l'utilisateur -->
+            <!-- Zone à selection unique permettant de choisir la categorie socio-professionnel de l'utilisateur -->
             <div class = "form-group">
               <label class = "col-sm-2 control-label"> Cadre Socio-Professionnel </label>
               <div class = "col-sm-10">
-                <select name = "csp" class = "form" id = "csp" required>
+                <select name = "csp" class = "form-control" id = "csp" required>
                   <option value = "agriculteur"> Agriculteur </option>
                   <option value = "artisans,comm,cent."> Artisans,comm,cent. </option>
                   <option value = "senior executives"> Cadres et professions intellectuels </option>
@@ -188,11 +167,10 @@ Changements: correction des formulaires.
                 </select>
               </div>
             </div>
-			
-			<!-- Bouton permettant de valider le formulaire et de rediriger vers la page de création du fichier json -->
-            <div class = "form-group" align = "center">
+            <!-- Bouton permettant de valider le formulaire et de rediriger vers la page de création du fichier json -->
+            <div class = "form-group">
               <div class = "col-sm-10">
-                <input type = "submit">
+                <input type = "submit" name = "button" class="btn btn-primary" value = "Modifier"></input>&nbsp
               </div>
             </div>
           </form>

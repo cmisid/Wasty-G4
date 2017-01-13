@@ -15,5 +15,5 @@ Changements : nommage des variables en anglais.
 	$handle = fopen('category.json', 'w+');
 	fputs($handle,$data);
 	fclose($handle);
-	header('location: ./categories.php');
+	header('location: ./category.php');
 ?>

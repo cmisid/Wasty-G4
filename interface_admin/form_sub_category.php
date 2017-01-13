@@ -11,10 +11,10 @@ Changements : nommage des variables en anglais.
 	$sub_category = $_POST['sub_category'];
 	$category = $_POST['category'];		
 	$data = '[{
-		"sub_category": "'.$sub_categor.'",
+		"sub_category": "'.$sub_category.'",
 		"category": "'.$category.'",
 	}]';
-	$handle = fopen('subCategory.json', 'w+');
+	$handle = fopen('sub_category.json', 'w+');
 	fputs($handle,$data);
 	fclose($handle);
 	header('location: ./sub_category.php');
